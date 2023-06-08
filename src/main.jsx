@@ -5,9 +5,14 @@ import "./index.css";
 
 import { RouterProvider } from "react-router-dom";
 import { router } from "./Routes/Router.jsx";
+import { HelmetProvider } from "react-helmet-async";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <HelmetProvider>
+      <div className="max-w-screen-xl mx-auto">
+        <RouterProvider router={router} />
+      </div>
+    </HelmetProvider>
   </React.StrictMode>
 );
