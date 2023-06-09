@@ -3,47 +3,59 @@
     "_id": 1,
     "name": "Commercial photography",
     "instructor": "John Smith",
+    "instructorImg": "https://i.ibb.co/dMXtTzF/pexels-max-fischer-5212317.jpg",
     "availableSeats": 10,
     "price": 50,
+    "time": "14h 52m",
     "image": "https://i.ibb.co/kGbDpJS/banner2.jpg"
   },
   {
     "_id": 2,
     "name": "Travel photography",
     "instructor": "Emily Johnson",
+    "instructorImg":"https://i.ibb.co/QQxzT6d/pexels-vanessa-garcia-6326377.jpg",
     "availableSeats": 5,
     "price": 40,
+    "time": "18h 56m",
     "image": "https://i.ibb.co/MGcwRBr/banner3.jpg"
   },
   {
     "_id": 3,
     "name": "Event photography",
     "instructor": "Michael Davis",
+    "instructorImg":"https://i.ibb.co/MpJJJyB/pexels-max-fischer-5212361.jpg",
     "availableSeats": 8,
     "price": 45,
+    "time": "17h 4m",
     "image": "https://i.ibb.co/kgf5DdS/banner4.jpg"
   },
   {
     "_id": 4,
     "name": "Fashion photography",
     "instructor": "Sophia Rodriguez",
+    "instructorImg":"https://i.ibb.co/dbqXqpd/pexels-photo-3808818.webp",
     "availableSeats": 0,
     "price": 60,
+    "time": "16h 34m",
     "image": "https://i.ibb.co/c8XKjyJ/banner5.jpg"
   },
   {
     "_id": 5,
     "name": "Sports photography",
     "instructor": "Daniel Thompson",
+    "instructorImg":"https://i.ibb.co/4TQNjx6/pexels-andrea-piacquadio-834863.jpg",
     "availableSeats": 3,
     "price": 55,
+    "time": "15h 20m",
     "image": "https://i.ibb.co/KDHrPpL/banner6.jpg"
   },
   {
     "_id": 6,
     "name": "Wildlife photography",
     "instructor": "Olivia Martin",
+    "instructorImg":"https://i.ibb.co/8PT8RGW/pexels-photo-3771807.webp",
     "availableSeats": 12,
+    "time": "4h 4m",
     "price": 45,
     "image": "https://i.ibb.co/dJ8RzF1/banner1.jpg"
   },
@@ -51,7 +63,9 @@
     "_id": 7,
     "name": "Architectural photography",
     "instructor": "William Wilson",
+    "instructorImg":"https://i.ibb.co/jyr1Hh8/pexels-photo-17049842.webp",
     "availableSeats": 6,
+    "time": "10h 34m",
     "price": 50,
     "image": "https://i.ibb.co/XC2FvBx/class7.jpg"
   },
@@ -59,7 +73,9 @@
     "_id": 8,
     "name": "Food photography",
     "instructor": "Emma Roberts",
+    "instructorImg":"https://i.ibb.co/XJkgr7T/300967012-438529215005243-4361550225332797370-n.jpg",
     "availableSeats": 15,
+    "time": "20h 31m",
     "price": 35,
     "image": "https://i.ibb.co/TTknyHZ/pexels-craig-adderley-1631899.jpg"
   }

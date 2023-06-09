@@ -34,7 +34,7 @@ const Navbar = () => {
               <Link to={""}>Instructors</Link>
             </li>
             <li>
-              <Link to={""}>Classes</Link>
+              <Link to={"/classes"}>Classes</Link>
             </li>
             <li>
               <Link to={""}>DashBoard</Link>
@@ -56,7 +56,7 @@ const Navbar = () => {
               <Link to={""}>Our Instructors</Link>
             </li>
             <li>
-              <Link to={""}>Our Classes</Link>
+              <Link to={"/classes"}>Our Classes</Link>
             </li>
             <li>
               <Link to={""}>DashBoard</Link>
