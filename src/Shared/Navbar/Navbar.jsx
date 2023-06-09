@@ -25,45 +25,41 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact text-black dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-compact bg-lime-400 text-black dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
                 <Link to={"/"}>Home</Link>
               </li>
               <li>
-                <a>Contact</a>
-              </li>
-              <li>
-                <Link to={""}>DashBoard</Link>
-              </li>
-              <li>
-                <Link to={"/"}>Menu</Link>
-              </li>
-              <li>
-                <Link to={"/"}>Shop</Link>
-              </li>
+              <Link to={""}>Instructors</Link>
+            </li>
+            <li>
+              <Link to={""}>Classes</Link>
+            </li>
+            <li>
+              <Link to={""}>DashBoard</Link>
+            </li>
             </ul>
           </div>
-          <a className="btn  btn-ghost text-lg">
+          <Link to={'/'} className="btn  btn-ghost text-lg">
             <div className="w-16 justify-center items-center">
-              <img src={logo1} alt="" />
+              <img className="w-full" src={logo1} alt="" />
             </div>
-          </a>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex navs">
-          <ul className="menu menu-horizontal px-1 font-semibold">
+          <ul className="menu menu-horizontal px-1 font-semibold text-base">
             <li>
               <Link to={"/"}>Home</Link>
             </li>
             <li>
-              <a>Contact Us</a>
-            </li>
-
-            <li>
-              <Link to={""}>Our Menu</Link>
+              <Link to={""}>Our Instructors</Link>
             </li>
             <li>
-              <Link to={""}>Our Shop</Link>
+              <Link to={""}>Our Classes</Link>
+            </li>
+            <li>
+              <Link to={""}>DashBoard</Link>
             </li>
           </ul>
         </div>

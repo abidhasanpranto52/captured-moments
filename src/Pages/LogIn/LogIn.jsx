@@ -1,17 +1,18 @@
 import { Link } from "react-router-dom";
-import login  from '../../assets/login/login.png'
+import login from "../../assets/login/login.png";
 
 const LogIn = () => {
   return (
-    <div className="hero animate__animated animate__zoomIn min-h-screen">
+    <div className="hero min-h-screen">
       <div className="hero-content flex-col lg:flex-row items-center">
-        <div className="text-center w-1/2 lg:text-left">
-          <img src={login} alt="" />
-          <h1 className="text-5xl font-bold">Login now!</h1>
+        <div className="text-center w-1/2  lg:text-left">
+          <img src={login} alt="Log In" />
+          <h1 className="text-5xl font-bold text-orange-700">Login now !</h1>
           <p className="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
+            Please Login and join our Community to see Our Works & Our Features.
+            If you like a course, enroll in any instructor's class of your
+            choice and take your hobby photography one step further and become a
+            professional photographer.
           </p>
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -47,13 +48,11 @@ const LogIn = () => {
                 </label>
               </div>
               <div className="form-control">
-                <label className="label">
-                </label>
-                
+                <label className="label"></label>
               </div>
               <div className="form-control mt-6">
                 <input
-                  className="btn btn-primary"
+                  className="btn btn-primary border-none bg-lime-700 hover:bg-orange-600"
                   type="submit"
                   disabled={false}
                   value="LOGIN"
@@ -62,7 +61,10 @@ const LogIn = () => {
             </form>
             <p className="text-center mt-5">
               Don't have an Account Yet?{" "}
-              <Link to={"/registration"} className="text-red-500 font-bold">
+              <Link
+                to={"/registration"}
+                className="text-lime-500 text-2xl font-semibold"
+              >
                 Sign Up
               </Link>
             </p>
