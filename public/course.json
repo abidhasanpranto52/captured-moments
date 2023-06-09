@@ -1,0 +1,66 @@
+[
+  {
+    "_id": 1,
+    "name": "Commercial photography",
+    "instructor": "John Smith",
+    "availableSeats": 10,
+    "price": 50,
+    "image": "https://i.ibb.co/kGbDpJS/banner2.jpg"
+  },
+  {
+    "_id": 2,
+    "name": "Travel photography",
+    "instructor": "Emily Johnson",
+    "availableSeats": 5,
+    "price": 40,
+    "image": "https://i.ibb.co/MGcwRBr/banner3.jpg"
+  },
+  {
+    "_id": 3,
+    "name": "Event photography",
+    "instructor": "Michael Davis",
+    "availableSeats": 8,
+    "price": 45,
+    "image": "https://i.ibb.co/kgf5DdS/banner4.jpg"
+  },
+  {
+    "_id": 4,
+    "name": "Fashion photography",
+    "instructor": "Sophia Rodriguez",
+    "availableSeats": 0,
+    "price": 60,
+    "image": "https://i.ibb.co/c8XKjyJ/banner5.jpg"
+  },
+  {
+    "_id": 5,
+    "name": "Sports photography",
+    "instructor": "Daniel Thompson",
+    "availableSeats": 3,
+    "price": 55,
+    "image": "https://i.ibb.co/KDHrPpL/banner6.jpg"
+  },
+  {
+    "_id": 6,
+    "name": "Wildlife photography",
+    "instructor": "Olivia Martin",
+    "availableSeats": 12,
+    "price": 45,
+    "image": "https://i.ibb.co/dJ8RzF1/banner1.jpg"
+  },
+  {
+    "_id": 7,
+    "name": "Architectural photography",
+    "instructor": "William Wilson",
+    "availableSeats": 6,
+    "price": 50,
+    "image": "https://i.ibb.co/XC2FvBx/class7.jpg"
+  },
+  {
+    "_id": 8,
+    "name": "Food photography",
+    "instructor": "Emma Roberts",
+    "availableSeats": 15,
+    "price": 35,
+    "image": "https://i.ibb.co/TTknyHZ/pexels-craig-adderley-1631899.jpg"
+  }
+]

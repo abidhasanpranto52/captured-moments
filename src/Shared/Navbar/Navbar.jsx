@@ -25,7 +25,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact bg-lime-400 text-black dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-compact bg-green-800 text-white dropdown-content mt-3 p-2 shadow  rounded-box w-52"
             >
               <li>
                 <Link to={"/"}>Home</Link>
@@ -42,7 +42,7 @@ const Navbar = () => {
             </ul>
           </div>
           <Link to={'/'} className="btn  btn-ghost text-lg">
-            <div className="w-16 justify-center items-center">
+            <div className="w-14 hidden md:block">
               <img className="w-full" src={logo1} alt="" />
             </div>
           </Link>
