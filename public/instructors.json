@@ -1,0 +1,105 @@
+[
+    {
+      "_id": "1",
+      "instructorImg": "https://i.ibb.co/QJhj3Fn/instructor01.png",
+      "name": "John Smith",
+      "email": "john.smith@example.com",
+      "classesTaken": 5,
+      "classes": [
+        "Fashion photography",
+        "Sports photography"
+      ]
+    },
+    {
+      "_id": "2",
+      "instructorImg": "https://i.ibb.co/mh1cYyb/instructor02.png",
+      "name": "Amelia",
+      "email": "jane.doe@example.com",
+      "classesTaken": 3,
+      "classes": [
+        "Commercial photography",
+        "Event photography",
+        "Architectural photography"
+      ]
+    },
+    {
+      "_id": "3",
+      "instructorImg": "https://i.ibb.co/xLWXBXb/instructor03.png",
+      "name": "David Johnson",
+      "email": "david.johnson@example.com",
+      "classesTaken": 2,
+      "classes": [
+        "Travel photography",
+        "Wildlife photography"
+      ]
+    },
+    {
+      "_id": "4",
+      "instructorImg": "https://i.ibb.co/K5qJyZB/instructor04.png",
+      "name": "Sarah Williams",
+      "email": "sarah.williams@example.com",
+      "classesTaken": 1,
+      "classes": [
+        "Food photography"
+      ]
+    },
+    {
+      "_id": "5",
+      "instructorImg": "https://i.ibb.co/99ht03D/instructor06.png",
+      "name": "Michael Brown",
+      "email": "michael.brown@example.com",
+      "classesTaken": 4,
+      "classes": [
+        "Commercial photography",
+        "Event photography",
+        "Fashion photography",
+        "Food photography"
+      ]
+    },
+    {
+      "_id": "6",
+      "instructorImg": "https://i.ibb.co/qyyhdsX/instructor05.png",
+      "name": "Emily Wilson",
+      "email": "emily.wilson@example.com",
+      "classesTaken": 6,
+      "classes": [
+        "Commercial photography",
+        "Travel photography",
+        "Event photography",
+        "Fashion photography",
+        "Sports photography",
+        "Food photography"
+      ]
+    },
+    {
+      "_id": "7",
+      "instructorImg": "https://i.ibb.co/2WftB3f/instructor08.png",
+      "name": "Daniel Anderson",
+      "email": "daniel.anderson@example.com",
+      "classesTaken": 6,
+      "classes": [
+        "Commercial photography",
+        "Event photography",
+        "Sports photography",
+        "Wildlife photography",
+        "Architectural photography",
+        "Food photography"
+      ]
+    },
+    {
+      "_id": "8",
+      "instructorImg": "https://i.ibb.co/mh1cYyb/instructor02.png",
+      "name": "Olivia Martinez",
+      "email": "olivia.martinez@example.com",
+      "classesTaken": 6,
+      "classes": [
+        "Travel photography",
+        "Event photography",
+        "Sports photography",
+        "Wildlife photography",
+        "Architectural photography",
+        "Food photography"
+      ]
+    }
+  ]
+  

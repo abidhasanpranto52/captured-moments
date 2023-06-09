@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import topbg from "../../assets/Banner/Topbg.jpg";
-
+import topBg from "../../assets/Banner/Topbg.jpg";
+import { AiOutlineFieldTime } from "react-icons/ai";
 import TopCover from "../../Shared/TopCover/TopCover";
 
 const Courses = () => {
@@ -16,7 +16,7 @@ const Courses = () => {
   }, []);
   return (
     <>
-      <TopCover img={topbg} title={"Our Classes"} />
+      <TopCover img={topBg} title={"Our Classes"} />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  place-items-center">
         {coursesClass.map((course) => (
           <div key={course._id}>
@@ -43,9 +43,9 @@ const Courses = () => {
                   </div>
                 </div>
                 <div className="flex flex-col items-center justify-around">
-                  <h2 className="card-title mb-2 text-gray-600">
-                    Time : {course.time}
-                  </h2>
+                  <p className="card-title mb-2 text-green-600">
+                    <AiOutlineFieldTime className="text-3xl"/> : {course.time}
+                  </p>
                   <h2 className="card-title font-semibold">
                     Available Seats :{course.availableSeats}
                   </h2>
@@ -57,7 +57,7 @@ const Courses = () => {
                   </h2>
                   <button
                     onClick={() => handleCart(item)}
-                    className="btn  btn-outline border-1 border-orange-500 item-center border-b-4"
+                    className="btn  btn-outline border-1 border-orange-500 item-center border-b-4 hover:bg-green-500"
                   >
                     Add to Cart
                   </button>

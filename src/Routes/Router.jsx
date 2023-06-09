@@ -5,16 +5,22 @@ import LogIn from "../Pages/LogIn/LogIn";
 import Registration from "../Pages/Registration/Registration";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Courses from "../Pages/Classes/Courses";
+import Instructors from "../Pages/Instructors/Instructors";
+import Dashboard from "../LayOut/Dashboard";
 
 export const router = createBrowserRouter([
     {
         path: "/",
         element: <Main/>,
-        errorElement: <ErrorPage/>,
+        // errorElement: <ErrorPage/>,
         children: [
             {
                 path: '/',
                 element: <Home/>
+            },
+            {
+                path: '/instructors',
+                element: <Instructors/>
             },
             {
                 path: '/classes',
@@ -29,5 +35,9 @@ export const router = createBrowserRouter([
                 element: <Registration/>
             },
         ]
+    },
+    {
+        path: 'dashboard',
+        element: <Dashboard/>
     }
 ])
