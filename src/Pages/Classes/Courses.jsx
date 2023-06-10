@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import topBg from "../../assets/Banner/Topbg.jpg";
 import { AiOutlineFieldTime } from "react-icons/ai";
 import TopCover from "../../Shared/TopCover/TopCover";
+import ClassCart from "../ClassCart/ClassCart";
 
 const Courses = () => {
   const [coursesClass, setCourseClass] = useState([]);
@@ -20,7 +21,7 @@ const Courses = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  place-items-center">
         {coursesClass.map((course) => (
           <div key={course._id}>
-            <section className="card w-80  my-5 border-b-4 rounded-tr-none rounded-bl-none border-t-4 border-green-700 shadow-md shadow-green-100">
+          <section className="card w-80  my-5 border-b-4 rounded-tr-none rounded-bl-none border-t-4 border-green-700 shadow-md shadow-green-100">
               <figure>
                 <img className="w-full" src={course.image} alt={name} />
               </figure>

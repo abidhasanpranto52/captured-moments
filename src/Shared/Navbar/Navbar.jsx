@@ -16,7 +16,7 @@ const Navbar = () => {
   };
   return (
     <>
-      <div className="navbar fixed  z-10 opacity-70 max-w-screen-xl mx-auto text-black  bg-base-200">
+      <div className="navbar fixed  z-10 opacity-80 max-w-screen-xl mx-auto text-black  bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -74,6 +74,9 @@ const Navbar = () => {
             <li>
               <Link to={"/classes"}>Our Classes</Link>
             </li>
+            {/* <li>
+              <Link to={"/extraClasses"}>Extra Classes</Link>
+            </li> */}
             {user ? (
               <li>
                 <Link to={"/dashboard"}>DashBoard</Link>
@@ -104,7 +107,7 @@ const Navbar = () => {
             {user ? (
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 tooltip tooltip-bottom rounded-full" data-tip={user?.displayName}>
-                  <img  src={user?.photo} />
+                  <img  src={user?.photoURL} />
                 </div>
               </label>
             ) : (

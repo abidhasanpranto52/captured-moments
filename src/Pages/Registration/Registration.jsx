@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet-async";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/Authprovider";
 import Swal from "sweetalert2";
+import SocialLogIn from "../../Shared/SocialLogIn/SocialLogIn";
 
 const Registration = () => {
   const {
@@ -168,7 +169,7 @@ const Registration = () => {
                 </Link>
               </p>
             </form>
-            {/* <SocialLogIn/> */}
+            <SocialLogIn/>
           </div>
         </div>
       </div>

@@ -6,8 +6,8 @@
       "email": "john.smith@example.com",
       "classesTaken": 5,
       "classes": [
-        "Fashion photography",
-        "Sports photography"
+        "fashionPhotography",
+        "sportsPhotography"
       ]
     },
     {
@@ -17,9 +17,9 @@
       "email": "jane.doe@example.com",
       "classesTaken": 3,
       "classes": [
-        "Commercial photography",
-        "Event photography",
-        "Architectural photography"
+        "commercialPhotography",
+        "eventPhotography",
+        "architecturalPhotography"
       ]
     },
     {
@@ -29,8 +29,8 @@
       "email": "david.johnson@example.com",
       "classesTaken": 2,
       "classes": [
-        "Travel photography",
-        "Wildlife photography"
+        "travelPhotography",
+        "wildlifePhotography"
       ]
     },
     {
@@ -40,7 +40,7 @@
       "email": "sarah.williams@example.com",
       "classesTaken": 1,
       "classes": [
-        "Food photography"
+        "foodPhotography"
       ]
     },
     {
@@ -50,10 +50,10 @@
       "email": "michael.brown@example.com",
       "classesTaken": 4,
       "classes": [
-        "Commercial photography",
-        "Event photography",
-        "Fashion photography",
-        "Food photography"
+        "commercialPhotography",
+        "eventPhotography",
+        "fashionPhotography",
+        "foodPhotography"
       ]
     },
     {
@@ -63,12 +63,9 @@
       "email": "emily.wilson@example.com",
       "classesTaken": 6,
       "classes": [
-        "Commercial photography",
-        "Travel photography",
-        "Event photography",
-        "Fashion photography",
-        "Sports photography",
-        "Food photography"
+        "commercialPhotography",
+        "travelPhotography",
+        "eventPhotography"
       ]
     },
     {
@@ -78,12 +75,10 @@
       "email": "daniel.anderson@example.com",
       "classesTaken": 6,
       "classes": [
-        "Commercial photography",
-        "Event photography",
-        "Sports photography",
-        "Wildlife photography",
-        "Architectural photography",
-        "Food photography"
+        "sportsPhotography",
+        "wildlifePhotography",
+        "architecturalPhotography",
+        "foodPhotography"
       ]
     },
     {
@@ -93,12 +88,10 @@
       "email": "olivia.martinez@example.com",
       "classesTaken": 6,
       "classes": [
-        "Travel photography",
-        "Event photography",
-        "Sports photography",
-        "Wildlife photography",
-        "Architectural photography",
-        "Food photography"
+        "travelPhotography",
+        "sportsPhotography",
+        "wildlifePhotography",
+        "architecturalPhotography"
       ]
     }
   ]

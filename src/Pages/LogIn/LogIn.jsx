@@ -4,6 +4,7 @@ import login from "../../assets/login/login.png";
 import { AuthContext } from "../../Providers/Authprovider";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
+import SocialLogIn from "../../Shared/SocialLogIn/SocialLogIn";
 
 const LogIn = () => {
 
@@ -102,7 +103,7 @@ const from = location.state?.from?.pathname || "/";
                 Sign Up
               </Link>
             </p>
-            {/* <SocialLogIn /> */}
+            <SocialLogIn />
           </div>
         </div>
       </div>

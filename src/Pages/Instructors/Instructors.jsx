@@ -3,6 +3,7 @@ import TopCover from "../../Shared/TopCover/TopCover";
 import topImg from "../../assets/Banner/Instructors.jpg";
 import { AiOutlineShareAlt } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import useInstructor from "../../assets/Hooks/useInstructor";
 
 const Instructors = () => {
   const [instructors, setInstructors] = useState([]);
@@ -15,6 +16,8 @@ const Instructors = () => {
         console.log(data);
       });
   }, []);
+
+  // const [instructor] = useInstructor();
   return (
     <>
       <TopCover img={topImg} title={"Top Instructors"} />

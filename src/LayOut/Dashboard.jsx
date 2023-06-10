@@ -45,10 +45,10 @@ const Dashboard = () => {
               </div>
             </Link>
             <li>
-              <Link to={""}>My Selected Classes</Link>
+              <Link to={"/dashboard/selectedClass"}>My Selected Classes</Link>
             </li>
             <li>
-              <Link to={""}>My Enrolled Classes</Link>
+              <Link to={"/dashboard/enrolledClass"}>My Enrolled Classes</Link>
             </li>
             <div className="divider"></div>
             <li>
