@@ -1,7 +1,19 @@
 import { Link } from "react-router-dom";
 import logo1 from "../../assets/logo (1).png";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/Authprovider";
+import { AiOutlineLogin, AiOutlineLogout } from "react-icons/ai";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <>
       <div className="navbar fixed  z-10 opacity-70 max-w-screen-xl mx-auto text-black  bg-base-200">
@@ -31,17 +43,21 @@ const Navbar = () => {
                 <Link to={"/"}>Home</Link>
               </li>
               <li>
-              <Link to={"instructors"}>Instructors</Link>
-            </li>
-            <li>
-              <Link to={"/classes"}>Classes</Link>
-            </li>
-            <li>
-              <Link to={"/dashboard"}>DashBoard</Link>
-            </li>
+                <Link to={"instructors"}>Instructors</Link>
+              </li>
+              <li>
+                <Link to={"/classes"}>Classes</Link>
+              </li>
+              {user ? (
+                <li>
+                  <Link to={"/dashboard"}>DashBoard</Link>
+                </li>
+              ) : (
+                <></>
+              )}
             </ul>
           </div>
-          <Link to={'/'} className="btn  btn-ghost text-lg">
+          <Link to={"/"} className="btn  btn-ghost text-lg">
             <div className="w-14 hidden md:block">
               <img className="w-full" src={logo1} alt="" />
             </div>
@@ -58,17 +74,58 @@ const Navbar = () => {
             <li>
               <Link to={"/classes"}>Our Classes</Link>
             </li>
-            <li>
-              <Link to={"/dashboard"}>DashBoard</Link>
-            </li>
+            {user ? (
+              <li>
+                <Link to={"/dashboard"}>DashBoard</Link>
+              </li>
+            ) : (
+              <></>
+            )}
           </ul>
         </div>
         <div className="navbar-end">
-          <ul>
-            <li>
-              <Link to={"/login"}>LogIn</Link>
-            </li>
-          </ul>
+          {/* {user ? (
+            <>
+              <button onClick={handleLogOut} className="btn btn-ghost">
+                LogOut
+              </button>
+            </>
+          ) : (
+            <ul>
+              <li>
+                <Link to={"/login"} className="btn btn-info">
+                  Log In
+                </Link>
+              </li>
+            </ul>
+          )} */}
+          {user?.email ? (
+          <>
+            {user ? (
+              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                <div className="w-10 tooltip tooltip-bottom rounded-full" data-tip={user?.displayName}>
+                  <img  src={user?.photo} />
+                </div>
+              </label>
+            ) : (
+              ""
+            )}
+            <Link
+              onClick={handleLogOut}
+              to={""}
+              className="btn btn-outline border-none btn-warning"
+            >
+              <AiOutlineLogout className="lg:text-2xl" />LogOut
+            </Link>
+          </>
+        ) : (
+          <Link
+            to={"/login"}
+            className="btn btn-outline border-none btn-warning"
+          >
+            <AiOutlineLogin className="lg:text-2xl font-bold" />LogIn
+          </Link>
+        )}
         </div>
       </div>
     </>

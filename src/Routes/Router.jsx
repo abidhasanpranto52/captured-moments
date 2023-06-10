@@ -7,6 +7,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Courses from "../Pages/Classes/Courses";
 import Instructors from "../Pages/Instructors/Instructors";
 import Dashboard from "../LayOut/Dashboard";
+import InstructorInfo from "../Pages/Instructors/instructorInfo";
 
 export const router = createBrowserRouter([
     {
@@ -21,6 +22,10 @@ export const router = createBrowserRouter([
             {
                 path: '/instructors',
                 element: <Instructors/>
+            },
+            {
+                path: '/instructorsInfo/:id',
+                element: <InstructorInfo/>
             },
             {
                 path: '/classes',

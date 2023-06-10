@@ -8,7 +8,7 @@ const Instructors = () => {
   const [instructors, setInstructors] = useState([]);
 
   useEffect(() => {
-    fetch("instructors.json")
+    fetch("http://localhost:5000/instructor")
       .then((res) => res.json())
       .then((data) => {
         setInstructors(data);
@@ -38,7 +38,7 @@ const Instructors = () => {
                     <small className="bg-warning p-1 rounded font-medium">{instructor.classes[0]}</small>
                   </div>
                   <div>
-                    <Link to={''}>
+                    <Link to={`/instructorsInfo/${instructor._id}`}>
                       <button className="btn btn-circle  opacity-80 btn-outline bg-blue-100 border-1 border-blue-400 item-center hover:bg-indigo-300 hover:border-none hover:text-black">
                         <AiOutlineShareAlt className="text-3xl opacity-70 "/>
                       </button>
@@ -48,7 +48,7 @@ const Instructors = () => {
               </div>
             </section>
           </div>
-        )) || {}}
+        )) }
       </div>
     </>
   );
