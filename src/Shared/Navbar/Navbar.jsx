@@ -88,21 +88,6 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          {/* {user ? (
-            <>
-              <button onClick={handleLogOut} className="btn btn-ghost">
-                LogOut
-              </button>
-            </>
-          ) : (
-            <ul>
-              <li>
-                <Link to={"/login"} className="btn btn-info">
-                  Log In
-                </Link>
-              </li>
-            </ul>
-          )} */}
           {user?.email ? (
           <>
             {user ? (

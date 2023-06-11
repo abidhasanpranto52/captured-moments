@@ -1,6 +1,6 @@
 import React,{useContext} from "react";
 import logo1 from "../assets/logo (1).png";
-import {  AiFillMessage,  AiOutlineAppstoreAdd,  AiOutlineMenuUnfold,  AiOutlineShoppingCart,  AiTwotoneShopping,
+import {  AiOutlineAppstoreAdd,  AiOutlineLogin,  AiOutlineLogout, AiOutlineShoppingCart,  AiTwotoneShopping,
 } from "react-icons/ai";
 import {  FaWallet,  FaCalendarAlt,  FaHome,  FaUtensils,  FaUsers,} from "react-icons/fa";
 import { GiTeacher } from "react-icons/gi";
@@ -12,7 +12,21 @@ import { AuthContext } from "../Providers/Authprovider";
 
 const Dashboard = () => {
   const [cart] = useCart();
-  const  {user} = useContext(AuthContext);
+  const  {user, logOut} = useContext(AuthContext);
+
+  const isAdmin = true;
+  const isInstructor = true;
+
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+
   return (
     <>
       <Helmet>
@@ -41,42 +55,92 @@ const Dashboard = () => {
                 <h1>{user?.displayName}</h1>
               </div>
             </Link>
-            <li>
-              <Link to={"/dashboard/addCourse"}><AiOutlineAppstoreAdd/> Add A Class</Link>
+
+
+            {
+              isAdmin ? (
+                <><li>
+              <Link to={"/dashboard/users"}><FaUsers className="text-2xl"/> Manage Users</Link>
             </li>
             <li>
-              <Link to={"/dashboard/courseCard"}><AiOutlineAppstoreAdd/>My Class</Link>
+              <Link to={"/dashboard/manageClasses"}><SiGoogleclassroom       className="text-2xl"/> Manage Classes</Link>
+            </li></>
+              ): <></>
+            }
+            {
+              isInstructor ?
+              <>
+            <li>
+              <Link to={"/dashboard/addCourse"}><AiOutlineAppstoreAdd className="text-2xl"/> Add A Class</Link>
             </li>
             <li>
-              <Link to={"/dashboard/selectedClass"}>My Selected Classes<span className="badge badge-outline ">+{cart.length || 0}</span></Link>
+              <Link to={"/dashboard/courseCard"}><AiOutlineAppstoreAdd className="text-2xl"/>My Class</Link>
+            </li>
+
+              </>:<></>
+            }
+            {
+              !!isAdmin && !!isInstructor ?
+              <>
+            <li>
+              <Link to={"/dashboard/selectedClass"}><AiOutlineShoppingCart className="text-2xl"/> My Selected Classes<span className="badge badge-outline ">+{cart.length || 0}</span></Link>
             </li>
             <li>
-              <Link to={"/dashboard/enrolledClass"}>My Enrolled Classes</Link>
+              <Link to={"/dashboard/enrolledClass"}><AiTwotoneShopping className="text-2xl"/> My Enrolled Classes</Link>
             </li>
+              </>:<></>
+            }
             <div className="divider"></div>
             <li>
               <Link to={"/"}>
-                <FaHome />
+                <FaHome className="text-2xl" />
                 Home
               </Link>
             </li>
             <li>
               <Link to={"/instructor"}>
-                <GiTeacher />
+                <GiTeacher className="text-2xl" />
                 Our Instructor
               </Link>
             </li>
             <li>
               <Link to={"/classes"}>
-                <SiGoogleclassroom /> Our Classes
+                <SiGoogleclassroom className="text-2xl" /> Our Classes
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link to={""}>
-                <AiFillMessage />
+                <AiFillMessage className="text-2xl" />
                 Contact
               </Link>
-            </li>
+            </li> */}
+            {user?.email ? (
+          <>
+            {/* {user ? (
+              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                <div className="w-10 tooltip tooltip-bottom rounded-full" data-tip={user?.displayName}>
+                  <img  src={user?.photoURL} />
+                </div>
+              </label>
+            ) : (
+              ""
+            )} */}
+            <Link
+              onClick={handleLogOut}
+              to={""}
+              className="btn btn-outline border-none bg-red-800 text-white"
+            >
+              <AiOutlineLogout className="lg:text-2xl" />LogOut
+            </Link>
+          </>
+        ) : (
+          <Link
+            to={"/login"}
+            className="btn btn-outline border-none btn-warning"
+          >
+            <AiOutlineLogin className="lg:text-2xl font-bold" />LogIn
+          </Link>
+        )}
           </ul>
         </div>
       </div>

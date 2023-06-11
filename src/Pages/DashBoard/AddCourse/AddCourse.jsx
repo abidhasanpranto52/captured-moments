@@ -37,7 +37,7 @@ const AddCourse = () => {
   return (
     <div className="w-full p-4">
       <Helmet>
-        <title>Bistro Boss | Add Item</title>
+        <title>Captured Moments | Add Item</title>
       </Helmet>
 
       <SectionHeader

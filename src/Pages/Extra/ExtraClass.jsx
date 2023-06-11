@@ -25,7 +25,7 @@ const ExtraClass = () => {
     return (
         <div className='pt-24'>
         <Helmet>
-          <title>Bistro Boss | Shop</title>
+          <title>Captured Moments | Shop</title>
         </Helmet>
         <Tabs className="border mb-2 rounded-md items-center" selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
           <TabList className="text-center p-4 font-bold">

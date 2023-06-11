@@ -13,6 +13,7 @@ import EnrolledClass from "../Pages/DashBoard/EnrolledClass/EnrolledClass";
 import AddCourse from "../Pages/DashBoard/AddCourse/AddCourse";
 import CourseCard from "../Pages/DashBoard/CourseCard/CourseCard";
 import InstructorInfo from "../Pages/Instructors/InstructorInfo";
+import Users from "../Pages/DashBoard/Users/Users";
 
 export const router = createBrowserRouter([
     {
@@ -70,6 +71,10 @@ export const router = createBrowserRouter([
             {
                 path: 'courseCard',
                 element: <CourseCard/>
+            },
+            {
+                path: 'users',
+                element: <Users/>
             },
         ]
     }
