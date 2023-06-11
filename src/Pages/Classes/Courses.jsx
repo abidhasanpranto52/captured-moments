@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import topBg from "../../assets/Banner/Topbg.jpg";
 import { AiOutlineFieldTime } from "react-icons/ai";
 import TopCover from "../../Shared/TopCover/TopCover";
-import ClassCart from "../ClassCart/ClassCart";
+import { AuthContext } from "../../Providers/Authprovider";
+import Swal from "sweetalert2";
 
 const Courses = () => {
   const [coursesClass, setCourseClass] = useState([]);
+  const {user} = useContext(AuthContext);
 
   useEffect(() => {
     fetch("http://localhost:5000/course")
@@ -15,6 +17,45 @@ const Courses = () => {
         console.log(data);
       });
   }, []);
+
+
+  const handleCart = course =>{
+    console.log(course);
+    if (user && user.email) {
+      const courseItem = {courseItemId:course. _id, name:course.name, image:course.image, price:course.price, email: user.email}
+      fetch('http://localhost:5000/carts' , {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify(courseItem)
+      })
+      .then(res => res.json())
+      .then(data =>{
+        if (data.insertedId) {
+          Swal.fire(
+            'Good job!',
+            'Food added on The Cart!',
+            'success'
+          )
+        }
+      })
+    }
+    else{
+      Swal.fire({
+        title: 'Please Log In to Order The Food',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'LogIn Now!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+         navigate('/login', {state: {from:location}})
+        }
+      })
+    }
+  }
   return (
     <>
       <TopCover img={topBg} title={"Our Classes"} />
@@ -57,7 +98,7 @@ const Courses = () => {
                     Price : ${course.price}
                   </h2>
                   <button
-                    onClick={() => handleCart(item)}
+                    onClick={() => handleCart(course)}
                     className="btn  btn-outline border-1 border-orange-500 item-center border-b-4 hover:bg-green-500"
                   >
                     Add to Cart

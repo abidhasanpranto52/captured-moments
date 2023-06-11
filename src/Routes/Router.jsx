@@ -11,6 +11,8 @@ import InstructorInfo from "../Pages/Instructors/instructorInfo";
 import ExtraClass from "../Pages/Extra/ExtraClass";
 import SelectedClass from "../Pages/DashBoard/SelectedClass/SelectedClass";
 import EnrolledClass from "../Pages/DashBoard/EnrolledClass/EnrolledClass";
+import AddCourse from "../Pages/DashBoard/AddCourse/AddCourse";
+import CourseCard from "../Pages/DashBoard/CourseCard/CourseCard";
 
 export const router = createBrowserRouter([
     {
@@ -60,6 +62,14 @@ export const router = createBrowserRouter([
             {
                 path: 'enrolledClass',
                 element: <EnrolledClass/>
+            },
+            {
+                path: 'addCourse',
+                element: <AddCourse/>
+            },
+            {
+                path: 'courseCard',
+                element: <CourseCard/>
             },
         ]
     }

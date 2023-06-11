@@ -2,6 +2,7 @@ import React from "react";
 import logo1 from "../assets/logo (1).png";
 import {
   AiFillMessage,
+  AiOutlineAppstoreAdd,
   AiOutlineMenuUnfold,
   AiOutlineShoppingCart,
   AiTwotoneShopping,
@@ -28,6 +29,7 @@ const Dashboard = () => {
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col items-center justify-center">
           {/* Page content here */}
+          <Outlet/>
           <label
             htmlFor="my-drawer-2"
             className="btn btn-primary drawer-button lg:hidden"
@@ -39,11 +41,18 @@ const Dashboard = () => {
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
           <ul className="menu p-4 w-80 h-full bg-yellow-600 font-bold">
             {/* Sidebar content here */}
+            
             <Link to={"/"} className="btn md:mb-10 btn-ghost">
               <div className="lg:w-20 hidden md:block">
                 <img className="w-full" src={logo1} alt="" />
               </div>
             </Link>
+            <li>
+              <Link to={"/dashboard/addCourse"}><AiOutlineAppstoreAdd/> Add A Class</Link>
+            </li>
+            <li>
+              <Link to={"/dashboard/courseCard"}><AiOutlineAppstoreAdd/>My Class</Link>
+            </li>
             <li>
               <Link to={"/dashboard/selectedClass"}>My Selected Classes</Link>
             </li>

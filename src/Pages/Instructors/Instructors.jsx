@@ -29,7 +29,7 @@ const Instructors = () => {
                 <img
                   className="w-full"
                   src={instructor.instructorImg}
-                  alt={instructor.name}
+                  alt={instructor.instructor}
                 />
               </figure>
 
@@ -37,8 +37,8 @@ const Instructors = () => {
               <div className="card-body">
                 <div className="flex  items-center justify-between">
                   <div>
-                    <p className="text-2xl font-medium">{instructor.name}</p>
-                    <small className="bg-warning p-1 rounded font-medium">{instructor.classes[0]}</small>
+                    <p className="text-2xl font-medium">{instructor.instructor}</p>
+                    <small className="bg-success p-1 capitalize rounded font-medium">{instructor.classes[0]}</small>
                   </div>
                   <div>
                     <Link to={`/instructorsInfo/${instructor._id}`}>

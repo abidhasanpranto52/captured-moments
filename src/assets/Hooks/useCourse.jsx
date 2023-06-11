@@ -6,7 +6,6 @@ const useCourse = () => {
     isLoading: loading,
     refetch,
   } = useQuery({
-    // const {data : course = [], isLoading: loading, refetch} = useQ({
     queryKey: ["course"],
     queryFn: async () => {
       const res = await fetch("http://localhost:5000/course");
