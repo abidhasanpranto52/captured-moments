@@ -51,7 +51,7 @@ const from = location.state?.from?.pathname || "/";
           </p>
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-          <div className="card-body">
+          <div className="card-body bg-gradient-to-t from-[#456fca3b] to-[#2974d099] rounded-2xl">
             <form onSubmit={handleLogIn}>
               <div className="form-control">
                 <label className="label">
@@ -98,9 +98,9 @@ const from = location.state?.from?.pathname || "/";
               Don't have an Account Yet?{" "}
               <Link
                 to={"/registration"}
-                className="text-lime-500 text-2xl font-semibold"
+                className="text-blue-500 text-2xl font-bold"
               >
-                Sign Up
+                SignUp
               </Link>
             </p>
             <SocialLogIn />

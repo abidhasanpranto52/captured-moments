@@ -2,6 +2,8 @@
   {
     "name": "commercialPhotography",
     "instructor": "John Smith",
+    "email": "john.smith@example.com",
+    "classesTaken": 5,
     "instructorImg": "https://i.ibb.co/QJhj3Fn/instructor01.png",
     "availableSeats": 10,
     "price": 50,
@@ -9,8 +11,32 @@
     "image": "https://i.ibb.co/kGbDpJS/banner2.jpg"
   },
   {
-    "name": "Travel photography",
+    "name": "fashionPhotography",
+    "instructor": "John Smith",
+    "email": "john.smith@example.com",
+    "classesTaken": 5,
+    "instructorImg": "https://i.ibb.co/QJhj3Fn/instructor01.png",
+    "availableSeats": 10,
+    "price": 50,
+    "time": "14h 52m",
+    "image": "https://i.ibb.co/kGbDpJS/banner2.jpg"
+  },
+  {
+    "name": "sportsPhotography",
+    "instructor": "John Smith",
+    "email": "john.smith@example.com",
+    "classesTaken": 5,
+    "instructorImg": "https://i.ibb.co/QJhj3Fn/instructor01.png",
+    "availableSeats": 10,
+    "price": 50,
+    "time": "14h 52m",
+    "image": "https://i.ibb.co/kGbDpJS/banner2.jpg"
+  },
+  {
+    "name": "commercialPhotography",
     "instructor": "Emily Johnson",
+    "email": "jane.doe@example.com",
+    "classesTaken": 3,
     "instructorImg": "https://i.ibb.co/mh1cYyb/instructor02.png",
     "availableSeats": 5,
     "price": 40,
@@ -18,8 +44,32 @@
     "image": "https://i.ibb.co/MGcwRBr/banner3.jpg"
   },
   {
-    "name": "Event photography",
+    "name": "eventPhotography",
+    "instructor": "Emily Johnson",
+    "email": "jane.doe@example.com",
+    "classesTaken": 3,
+    "instructorImg": "https://i.ibb.co/mh1cYyb/instructor02.png",
+    "availableSeats": 5,
+    "price": 40,
+    "time": "18h 56m",
+    "image": "https://i.ibb.co/MGcwRBr/banner3.jpg"
+  },
+  {
+    "name": "architecturalPhotography",
+    "instructor": "Emily Johnson",
+    "email": "jane.doe@example.com",
+    "classesTaken": 3,
+    "instructorImg": "https://i.ibb.co/mh1cYyb/instructor02.png",
+    "availableSeats": 5,
+    "price": 40,
+    "time": "18h 56m",
+    "image": "https://i.ibb.co/MGcwRBr/banner3.jpg"
+  },
+  {
+    "name": "travelPhotography",
     "instructor": "Michael Davis",
+    "email": "david.johnson@example.com",
+    "classesTaken": 2,
     "instructorImg": "https://i.ibb.co/xLWXBXb/instructor03.png",
     "availableSeats": 8,
     "price": 45,
@@ -27,8 +77,21 @@
     "image": "https://i.ibb.co/kgf5DdS/banner4.jpg"
   },
   {
-    "name": "Fashion photography",
+    "name": "wildlifePhotography",
+    "instructor": "Michael Davis",
+    "email": "david.johnson@example.com",
+    "classesTaken": 2,
+    "instructorImg": "https://i.ibb.co/xLWXBXb/instructor03.png",
+    "availableSeats": 8,
+    "price": 45,
+    "time": "17h 4m",
+    "image": "https://i.ibb.co/kgf5DdS/banner4.jpg"
+  },
+  {
+    "name": "foodPhotography",
     "instructor": "Sophia Rodriguez",
+    "email": "sarah.williams@example.com",
+    "classesTaken": 1,
     "instructorImg": "https://i.ibb.co/K5qJyZB/instructor04.png",
     "availableSeats": 0,
     "price": 60,
@@ -36,8 +99,10 @@
     "image": "https://i.ibb.co/c8XKjyJ/banner5.jpg"
   },
   {
-    "name": "Sports photography",
+    "name": "commercialPhotography",
     "instructor": "Daniel Thompson",
+    "email": "michael.brown@example.com",
+    "classesTaken": 4,
     "instructorImg": "https://i.ibb.co/99ht03D/instructor06.png",
     "availableSeats": 3,
     "price": 55,
@@ -45,8 +110,43 @@
     "image": "https://i.ibb.co/KDHrPpL/banner6.jpg"
   },
   {
-    "name": "Wildlife photography",
+    "name": "eventPhotography",
+    "instructor": "Daniel Thompson",
+    "email": "michael.brown@example.com",
+    "classesTaken": 4,
+    "instructorImg": "https://i.ibb.co/99ht03D/instructor06.png",
+    "availableSeats": 3,
+    "price": 55,
+    "time": "15h 20m",
+    "image": "https://i.ibb.co/KDHrPpL/banner6.jpg"
+  },
+  {
+    "name": "fashionPhotography",
+    "instructor": "Daniel Thompson",
+    "email": "michael.brown@example.com",
+    "classesTaken": 4,
+    "instructorImg": "https://i.ibb.co/99ht03D/instructor06.png",
+    "availableSeats": 3,
+    "price": 55,
+    "time": "15h 20m",
+    "image": "https://i.ibb.co/KDHrPpL/banner6.jpg"
+  },
+  {
+    "name": "foodPhotography",
+    "instructor": "Daniel Thompson",
+    "email": "michael.brown@example.com",
+    "classesTaken": 4,
+    "instructorImg": "https://i.ibb.co/99ht03D/instructor06.png",
+    "availableSeats": 3,
+    "price": 55,
+    "time": "15h 20m",
+    "image": "https://i.ibb.co/KDHrPpL/banner6.jpg"
+  },
+  {
+    "name": "commercialPhotography",
     "instructor": "Olivia Martin",
+    "email": "emily.wilson@example.com",
+    "classesTaken": 3,
     "instructorImg": "https://i.ibb.co/qyyhdsX/instructor05.png",
     "availableSeats": 12,
     "time": "4h 4m",
@@ -54,8 +154,32 @@
     "image": "https://i.ibb.co/dJ8RzF1/banner1.jpg"
   },
   {
-    "name": "Architectural photography",
+    "name": "travelPhotography",
+    "instructor": "Olivia Martin",
+    "email": "emily.wilson@example.com",
+    "classesTaken": 3,
+    "instructorImg": "https://i.ibb.co/qyyhdsX/instructor05.png",
+    "availableSeats": 12,
+    "time": "4h 4m",
+    "price": 45,
+    "image": "https://i.ibb.co/dJ8RzF1/banner1.jpg"
+  },
+  {
+    "name": "eventPhotography",
+    "instructor": "Olivia Martin",
+    "email": "emily.wilson@example.com",
+    "classesTaken": 3,
+    "instructorImg": "https://i.ibb.co/qyyhdsX/instructor05.png",
+    "availableSeats": 12,
+    "time": "4h 4m",
+    "price": 45,
+    "image": "https://i.ibb.co/dJ8RzF1/banner1.jpg"
+  },
+  {
+    "name": "architecturalPhotography",
     "instructor": "William Wilson",
+    "email": "daniel.anderson@example.com",
+    "classesTaken": 4,
     "instructorImg": "https://i.ibb.co/2WftB3f/instructor08.png",
     "availableSeats": 6,
     "time": "10h 34m",
@@ -63,8 +187,76 @@
     "image": "https://i.ibb.co/XC2FvBx/class7.jpg"
   },
   {
-    "name": "Food photography",
+    "name": "wildlifePhotography",
+    "instructor": "William Wilson",
+    "email": "daniel.anderson@example.com",
+    "classesTaken": 4,
+    "instructorImg": "https://i.ibb.co/2WftB3f/instructor08.png",
+    "availableSeats": 6,
+    "time": "10h 34m",
+    "price": 50,
+    "image": "https://i.ibb.co/XC2FvBx/class7.jpg"
+  },
+  {
+    "name": "foodPhotography",
+    "instructor": "William Wilson",
+    "email": "daniel.anderson@example.com",
+    "classesTaken": 4,
+    "instructorImg": "https://i.ibb.co/2WftB3f/instructor08.png",
+    "availableSeats": 6,
+    "time": "10h 34m",
+    "price": 50,
+    "image": "https://i.ibb.co/XC2FvBx/class7.jpg"
+  },
+  {
+    "name": "sportsPhotography",
+    "instructor": "William Wilson",
+    "email": "daniel.anderson@example.com",
+    "classesTaken": 4,
+    "instructorImg": "https://i.ibb.co/2WftB3f/instructor08.png",
+    "availableSeats": 6,
+    "time": "10h 34m",
+    "price": 50,
+    "image": "https://i.ibb.co/XC2FvBx/class7.jpg"
+  },
+  {
+    "name": "travelPhotography",
     "instructor": "Emma Roberts",
+    "email": "olivia.martinez@example.com",
+    "classesTaken": 4,
+    "instructorImg": "https://i.ibb.co/mh1cYyb/instructor02.png",
+    "availableSeats": 15,
+    "time": "20h 31m",
+    "price": 35,
+    "image": "https://i.ibb.co/TTknyHZ/pexels-craig-adderley-1631899.jpg"
+  },
+  {
+    "name": "sportsPhotography",
+    "instructor": "Emma Roberts",
+    "email": "olivia.martinez@example.com",
+    "classesTaken": 4,
+    "instructorImg": "https://i.ibb.co/mh1cYyb/instructor02.png",
+    "availableSeats": 15,
+    "time": "20h 31m",
+    "price": 35,
+    "image": "https://i.ibb.co/TTknyHZ/pexels-craig-adderley-1631899.jpg"
+  },
+  {
+    "name": "architecturalPhotography",
+    "instructor": "Emma Roberts",
+    "email": "olivia.martinez@example.com",
+    "classesTaken": 4,
+    "instructorImg": "https://i.ibb.co/mh1cYyb/instructor02.png",
+    "availableSeats": 15,
+    "time": "20h 31m",
+    "price": 35,
+    "image": "https://i.ibb.co/TTknyHZ/pexels-craig-adderley-1631899.jpg"
+  },
+  {
+    "name": "wildlifePhotography",
+    "instructor": "Emma Roberts",
+    "email": "olivia.martinez@example.com",
+    "classesTaken": 4,
     "instructorImg": "https://i.ibb.co/mh1cYyb/instructor02.png",
     "availableSeats": 15,
     "time": "20h 31m",

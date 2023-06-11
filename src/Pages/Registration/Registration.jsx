@@ -14,9 +14,7 @@ const Registration = () => {
     reset,
     formState: { errors },
   } = useForm();
-
   const { createUser, updateUser } = useContext(AuthContext);
-
   const navigate = useNavigate();
 
   const onSubmit = (data) => {
@@ -24,17 +22,31 @@ const Registration = () => {
       const loggedUser = result.user;
       console.log(loggedUser);
       updateUser(data.name, data.photoURL)
-      .then(() => {
-          console.log("user profile updated");
-          reset();
-          Swal.fire({
-            position: "top-middle",
-            icon: "success",
-            title: "User Created Successfully",
-            showConfirmButton: false,
-            timer: 1500,
-          });
-          navigate("/");
+        .then(() => {
+          const saveUser = { name: data.name, email: data.email };
+          fetch("http://localhost:5000/users", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(saveUser),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.insertedId) {
+                reset();
+
+                console.log("user profile updated");
+                Swal.fire({
+                  position: "top-middle",
+                  icon: "success",
+                  title: "User Created Successfully",
+                  showConfirmButton: false,
+                  timer: 1500,
+                });
+                navigate("/");
+              }
+            });
         })
         .catch((error) => console.log(error));
     });
@@ -46,20 +58,9 @@ const Registration = () => {
       </Helmet>
       <div className="hero min-h-screen bg-base-100">
         <div className="hero-content flex-col lg:flex-row items-center">
-          <div className="text-center lg:text-left lg:w-1/2">
-            <img src={registration} alt="" />
-            <h1 className="text-5xl font-bold text-green-600">
-              Well Come to Our Captured Moments
-            </h1>
-            <p className="py-4">
-              Please Registration and join our Community to see Our Works & Our
-              Features. If you like a course, enroll in any instructor's class
-              of your choice and take your hobby photography one step further
-              and become a professional photographer.
-            </p>
-          </div>
+      
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form onSubmit={handleSubmit(onSubmit)} className="card-body">
+            <form onSubmit={handleSubmit(onSubmit)} className="card-body bg-gradient-to-t from-[#caab4522] to-[#2f29d025] rounded-2xl">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text font-semibold">Name</span>
@@ -163,13 +164,25 @@ const Registration = () => {
                 Already have an Account?{" "}
                 <Link
                   to={"/login"}
-                  className="text-green-500 text-2xl font-semibold"
+                  className="text-green-900 text-2xl font-bold"
                 >
-                  Log In
+                  LogIn
                 </Link>
               </p>
+            <SocialLogIn />
             </form>
-            <SocialLogIn/>
+          </div>
+          <div className="text-center lg:text-left lg:w-1/2">
+            <img src={registration} alt="" />
+            <h1 className="text-5xl font-bold text-green-600">
+              Well Come to Our Captured Moments
+            </h1>
+            <p className="py-4">
+              Please Registration and join our Community to see Our Works & Our
+              Features. If you like a course, enroll in any instructor's class
+              of your choice and take your hobby photography one step further
+              and become a professional photographer.
+            </p>
           </div>
         </div>
       </div>

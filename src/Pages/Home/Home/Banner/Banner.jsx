@@ -10,24 +10,24 @@ import img6 from '../../../../assets/Banner/banner5.jpg'
 
 const Banner = () => {
     return (
-        <Carousel className='text-center'>
+        <Carousel className='text-center md:max-h-screen'>
       <div>
-        <img src={img1} />
+        <img className="md:max-h-screen" src={img1} />
       </div>
       <div>
-        <img src={img2} />
+        <img className="md:max-h-screen" src={img2} />
       </div>
-      <div className="h-[250px]  md:h-[655px]">
-        <img src={img3} />
-      </div>
-      <div>
-        <img src={img4} />
+      <div className="h-[250px]  md:max-h-screen">
+        <img className="md:max-h-screen" src={img3} />
       </div>
       <div>
-        <img src={img5} />
+        <img className="md:max-h-screen" src={img4} />
       </div>
       <div>
-        <img src={img6} />
+        <img className="md:max-h-screen" src={img5} />
+      </div>
+      <div>
+        <img className="md:max-h-screen" src={img6} />
       </div>
     </Carousel>
     );

@@ -1,25 +1,18 @@
-import React from "react";
+import React,{useContext} from "react";
 import logo1 from "../assets/logo (1).png";
-import {
-  AiFillMessage,
-  AiOutlineAppstoreAdd,
-  AiOutlineMenuUnfold,
-  AiOutlineShoppingCart,
-  AiTwotoneShopping,
+import {  AiFillMessage,  AiOutlineAppstoreAdd,  AiOutlineMenuUnfold,  AiOutlineShoppingCart,  AiTwotoneShopping,
 } from "react-icons/ai";
-import {
-  FaWallet,
-  FaCalendarAlt,
-  FaHome,
-  FaUtensils,
-  FaUsers,
-} from "react-icons/fa";
+import {  FaWallet,  FaCalendarAlt,  FaHome,  FaUtensils,  FaUsers,} from "react-icons/fa";
 import { GiTeacher } from "react-icons/gi";
 import { SiGoogleclassroom } from "react-icons/si";
 import { Helmet } from "react-helmet-async";
 import { Link, Outlet } from "react-router-dom";
+import useCart from "../assets/Hooks/useCart";
+import { AuthContext } from "../Providers/Authprovider";
 
 const Dashboard = () => {
+  const [cart] = useCart();
+  const  {user} = useContext(AuthContext);
   return (
     <>
       <Helmet>
@@ -39,12 +32,13 @@ const Dashboard = () => {
         </div>
         <div className="drawer-side">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-          <ul className="menu p-4 w-80 h-full bg-yellow-600 font-bold">
+          <ul className="menu p-4 w-80 h-full bg-gray-300 font-bold">
             {/* Sidebar content here */}
             
-            <Link to={"/"} className="btn md:mb-10 btn-ghost">
-              <div className="lg:w-20 hidden md:block">
-                <img className="w-full" src={logo1} alt="" />
+            <Link to={"/"} className="md:mb-1 text-center mx-auto">
+              <div className="lg:w-20 hidden rounded-full md:block">
+                <img className="w-full rounded-full" src={user?.photoURL} alt="" />
+                <h1>{user?.displayName}</h1>
               </div>
             </Link>
             <li>
@@ -54,7 +48,7 @@ const Dashboard = () => {
               <Link to={"/dashboard/courseCard"}><AiOutlineAppstoreAdd/>My Class</Link>
             </li>
             <li>
-              <Link to={"/dashboard/selectedClass"}>My Selected Classes</Link>
+              <Link to={"/dashboard/selectedClass"}>My Selected Classes<span className="badge badge-outline ">+{cart.length || 0}</span></Link>
             </li>
             <li>
               <Link to={"/dashboard/enrolledClass"}>My Enrolled Classes</Link>

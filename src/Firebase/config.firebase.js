@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAKmHoK_wrVjW_mi0lMX6egVPEXZxchigU",
-  authDomain: "captured-moments-project.firebaseapp.com",
-  projectId: "captured-moments-project",
-  storageBucket: "captured-moments-project.appspot.com",
-  messagingSenderId: "1051064020527",
-  appId: "1:1051064020527:web:14a49cf5fd021ac0b0e0da"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId
 };
 
 // Initialize Firebase

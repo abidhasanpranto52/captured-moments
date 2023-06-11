@@ -1,86 +1,109 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import SectionHeader from "../../../Shared/SectionHeader/SectionHeader";
-import useCourse from "../../../assets/Hooks/useCourse";
 import { AiTwotoneDelete } from "react-icons/ai";
-import { BiEdit } from "react-icons/bi";
+import { AuthContext } from "../../../Providers/Authprovider";
+import Swal from "sweetalert2";
+import useCart from "../../../assets/Hooks/useCart";
 
 const SelectedClass = () => {
-  const [carts, setCarts] = useState();
+  const { user } = useContext(AuthContext);
+  const [carts, setCarts] = useState([]);
+  const [,refetch] = useCart();
 
   useEffect(() => {
-    fetch("http://localhost:5000/carts")
+    fetch(`http://localhost:5000/carts?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setCarts(data);
         console.log(data);
       });
-  }, []);
+  }, [user]);
+
+  const handleDelete = (item) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/carts/${item._id}`,{
+          method: "DELETE"
+        }).then((res) => res.json())
+        .then(data => {
+          if (data.deletedCount> 0) {
+            refetch()
+            Swal.fire("Deleted!", "Your file has been deleted.", "success");
+          }
+        })
+      }
+    });
+  };
 
   return (
     <div className="w-full">
       <Helmet>
-        <title>Bistro Boss | Manage Items</title>
+        <title>Captured Moments| Selected Courses</title>
       </Helmet>
       <SectionHeader
-        heading={"My Selected Items "}
-        subHeading={"I Choose This Courses"}
+        heading={"My Selected Classes "}
       ></SectionHeader>
+   
 
-      <div className="uppercase flex  items-center justify-evenly ">
-        {/* <h3 className="text-2xl">Total items: {length}</h3> */}
-      </div>
-
-      <div className="overflow-x-auto lg:overflow-visible w-full min-h-screen relative  md:px-20 px-auto">
-        <table className="table w-full">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Item Image</th>
-              <th>Item Name</th>
-              <th>Price</th>
-              <th>Delete</th>
-              <th>Pay</th>
-            </tr>
-          </thead>
-          <tbody>
-            {carts.map((item, index) => (
-              <tr key={item._id}>
-                <td>{index + 1}</td>
-                <td>
-                  <div className="flex items-center space-x-3">
-                    <div className="avatar">
-                      <div className="mask mask-squircle w-12 h-12">
-                        <img
-                          src={item.image}
-                          alt="Avatar Tailwind CSS Component"
-                        />
-                      </div>
+      {carts.map((item) => (
+        <div key={item._id}>
+          <div className="border-2 max-w-screen-lg mx-auto bg-gradient-to-r from-[#caab453b] to-[#2974d01b] rounded-md my-2 rounded-lg">
+            <div className="grid grid-cols-1 md:grid-cols-3">
+              <div className="border m-2  shadow-lg rounded-md">
+                <img className="rounded-md" src={item.image} alt="" />
+              </div>
+              <div className="px-4 col-span-2">
+                <div className=" flex my-5 place-items-center justify-between">
+                  <div>
+                    <h2 className="font-semibold capitalize my-1 text-green-500 text-3xl">
+                      {item.name}
+                    </h2>
+                  </div>
+                  <div className="flex gap-4 place-items-center items-center">
+                    <div>
+                      <button
+                        onClick={() => handleDelete(item)}
+                        className="btn btn-ghost btn-sm border-black text-2xl btn-circle  text-red-600 hover:border-red-800 hover:text-black hover:bg-transparent"
+                      >
+                        <AiTwotoneDelete />
+                      </button>
+                    </div>
+                    <div>
+                      <button
+                        onClick={() => handlePay(item)}
+                        className="btn btn-ghost btn-sm  capitalize text-white hover:text-black items-center bg-green-600"
+                      >
+                        Pay
+                      </button>
                     </div>
                   </div>
-                </td>
-                <td>{item.name}</td>
-                <td>{item.price}</td>
-                <td>
-                  <button
-                    onClick={() => handleDelete(item)}
-                    className="btn btn-ghost text-2xl text-white  bg-red-600"
-                  >
-                    <AiTwotoneDelete />
-                  </button>
-                </td>
-                <td>
-                  <button
-                    onClick={() => handleDelete(item)}
-                    className="btn btn-ghost text-2xl text-white  bg-green-600"
-                  >Pay
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+                </div>
+                <hr />
+                <div>
+                  <h4 className="font-semibold text-2xl my-1">About Course:</h4>
+                  <p>
+                    suada faci lisis Lorem ipsum dolarorit more ametion
+                    consectetur elit. Vesti bulum a nec odio aea theawr dumm
+                    ipsumm ipsum that dolocons rsus suada and fadolorit
+                    consectetur elit. All the Lorem Ipsum generators on their
+                    the Internet tend repeat predefined chunks dumme lisis
+                    Lorem.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
     </div>
     // <h1>hello</h1>
   );

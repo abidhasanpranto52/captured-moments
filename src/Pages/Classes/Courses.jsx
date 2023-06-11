@@ -4,10 +4,12 @@ import { AiOutlineFieldTime } from "react-icons/ai";
 import TopCover from "../../Shared/TopCover/TopCover";
 import { AuthContext } from "../../Providers/Authprovider";
 import Swal from "sweetalert2";
+import useCart from "../../assets/Hooks/useCart";
 
 const Courses = () => {
   const [coursesClass, setCourseClass] = useState([]);
   const {user} = useContext(AuthContext);
+  const [, refetch] = useCart();
 
   useEffect(() => {
     fetch("http://localhost:5000/course")
@@ -33,6 +35,7 @@ const Courses = () => {
       .then(res => res.json())
       .then(data =>{
         if (data.insertedId) {
+          refetch();
           Swal.fire(
             'Good job!',
             'Food added on The Cart!',
@@ -59,12 +62,12 @@ const Courses = () => {
   return (
     <>
       <TopCover img={topBg} title={"Our Classes"} />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  place-items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 place-items-center">
         {coursesClass.map((course) => (
           <div key={course._id}>
           <section className="card w-80  my-5 border-b-4 rounded-tr-none rounded-bl-none border-t-4 border-green-700 shadow-md shadow-green-100">
               <figure>
-                <img className="w-full" src={course.image} alt={name} />
+                <img className="w-full" src={course.image} alt='' />
               </figure>
               <p
                 className="font-bold absolute right-0 mr-2 bg-yellow-500 p-1

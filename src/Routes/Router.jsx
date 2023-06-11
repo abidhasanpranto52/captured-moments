@@ -7,12 +7,12 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Courses from "../Pages/Classes/Courses";
 import Instructors from "../Pages/Instructors/Instructors";
 import Dashboard from "../LayOut/Dashboard";
-import InstructorInfo from "../Pages/Instructors/instructorInfo";
 import ExtraClass from "../Pages/Extra/ExtraClass";
 import SelectedClass from "../Pages/DashBoard/SelectedClass/SelectedClass";
 import EnrolledClass from "../Pages/DashBoard/EnrolledClass/EnrolledClass";
 import AddCourse from "../Pages/DashBoard/AddCourse/AddCourse";
 import CourseCard from "../Pages/DashBoard/CourseCard/CourseCard";
+import InstructorInfo from "../Pages/Instructors/InstructorInfo";
 
 export const router = createBrowserRouter([
     {

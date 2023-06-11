@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import logo1 from "../../assets/logo (1).png";
 import { useContext } from "react";
+import './Navbar.css'
 import { AuthContext } from "../../Providers/Authprovider";
 import { AiOutlineLogin, AiOutlineLogout } from "react-icons/ai";
 
@@ -16,7 +17,7 @@ const Navbar = () => {
   };
   return (
     <>
-      <div className="navbar fixed  z-10 opacity-80 max-w-screen-xl mx-auto text-black  bg-base-100">
+      <div className="navbar fixed  z-10 opacity-80  mx-auto text-black  bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
