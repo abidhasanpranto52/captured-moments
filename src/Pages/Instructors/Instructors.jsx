@@ -9,10 +9,9 @@ import useCourse from "../../assets/Hooks/useCourse";
 const Instructors = () => {
   const [instructors, setInstructors] = useState([]);
   const [course] = useCourse();
-  const ourInstructors = course.filter((item) => item.name === "commercialPhotography");
 
   useEffect(() => {
-    fetch("http://localhost:5000/course")
+    fetch("http://localhost:5000/instructors")
       .then((res) => res.json())
       .then((data) => {
         setInstructors(data);
@@ -31,8 +30,8 @@ const Instructors = () => {
               <figure>
                 <img
                   className="w-full"
-                  src={instructor.instructorImg}
-                  alt={instructor.instructor}
+                  src={instructor.image}
+                  alt={instructor}
                 />
               </figure>
 
@@ -40,7 +39,7 @@ const Instructors = () => {
               <div className="card-body">
                 <div className="flex  items-center justify-between">
                   <div>
-                    <p className="text-2xl font-medium">{instructor.instructor}</p>
+                    <p className="text-2xl font-medium">{instructor.name}</p>
                     <small className="bg-success p-1 capitalize rounded font-medium">{instructor.name}</small>
                   </div>
                   <div>

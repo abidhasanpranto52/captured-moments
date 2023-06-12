@@ -5,12 +5,14 @@ import { FaUsers } from "react-icons/fa";
 import SectionHeader from "../../../Shared/SectionHeader/SectionHeader";
 import { AiTwotoneDelete } from "react-icons/ai";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../../assets/Hooks/useAxiosSecure";
 
 const Users = () => {
+  const [axiosSecure] = useAxiosSecure();
   const { data: users = [], refetch } = useQuery(["users"], async () => {
     console.log(users);
-    const res = await fetch("http://localhost:5000/users");
-    return res.json();
+    const res = await axiosSecure.get("/users");
+    return res.data;
   });
 
   const handleMakeAdmin = user => {
@@ -26,6 +28,25 @@ const Users = () => {
             position: 'top-middle',
             icon: 'success',
             title: `${user.name} is an Admin Now`,
+            showConfirmButton: false,
+            timer: 1500
+          })
+        }
+      })
+  }
+  const handleMakeInstructor = user => {
+    fetch(`http://localhost:5000/users/instructor/${user._id}`,{
+        method: 'PATCH'
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        if (data.modifiedCount) {
+          refetch();
+          Swal.fire({
+            position: 'top-middle',
+            icon: 'success',
+            title: `${user.name} is an Instructor Now`,
             showConfirmButton: false,
             timer: 1500
           })
@@ -76,11 +97,11 @@ const Users = () => {
         <table className="table w-full">
           <thead>
             <tr>
-              <th>#</th>
+            <th>#</th>
               <th>Name</th>
               <th>Email</th>
               <th>Role</th>
-              <th>Action</th>
+              <th className="text-justify">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -90,25 +111,43 @@ const Users = () => {
                 <td>{user.name}</td>
                 <td>{user.email}</td>
                 <td>
+                    {user?.role ? <p>{user.role}</p> : <p>Student</p> }
+                </td>
+                <td className="flex gap-2">
+                <div>
                   {" "}
                   {user.role === "admin" ? (
                     "Admin"
                   ) : (
-                    <button
+                    <button disabled={user.role === "Admin" || user.role === "Instructor"}
                       onClick={() => handleMakeAdmin(user)}
                       className="btn btn-ghost text-2xl text-black  bg-green-500"
                     >
                       <FaUsers />
                     </button>
                   )}
-                </td>
-                <td>
+                </div>
+                <div>
+                  {" "}
+                  {user.role === "instructor" ? (
+                    "Instructor"
+                  ) : (
+                    <button disabled={user.role === "admin" || user.role === "instructor"}
+                      onClick={() => handleMakeInstructor(user)}
+                      className="btn btn-ghost text-2xl text-black  bg-green-500"
+                    >
+                      <FaUsers />
+                    </button>
+                  )}
+                </div>
+                <div>
                   <button
                     onClick={() => handleUseDelete(user)}
                     className="btn btn-ghost text-2xl text-white  bg-red-600"
                   >
                     <AiTwotoneDelete />
                   </button>
+                </div>
                 </td>
               </tr>
             ))}

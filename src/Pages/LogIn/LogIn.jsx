@@ -8,7 +8,7 @@ import SocialLogIn from "../../Shared/SocialLogIn/SocialLogIn";
 
 const LogIn = () => {
 
-const {signIn} = useContext(AuthContext);
+const {user,signIn} = useContext(AuthContext);
 const navigate = useNavigate();
 const location = useLocation();
 
@@ -27,7 +27,7 @@ const from = location.state?.from?.pathname || "/";
       Swal.fire({
         position: 'top-middle',
         icon: 'success',
-        title: 'Your work has been saved',
+        title: `User Log In Successfully`,
         showConfirmButton: false,
         timer: 1500
       });

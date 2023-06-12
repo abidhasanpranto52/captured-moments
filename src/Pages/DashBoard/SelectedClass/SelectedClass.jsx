@@ -8,11 +8,18 @@ import useCart from "../../../assets/Hooks/useCart";
 
 const SelectedClass = () => {
   const { user } = useContext(AuthContext);
-  const [carts, setCarts] = useState([]);
+  // const [carts, setCarts] = useState([]);
+  const [cart] = useCart();
   const [,refetch] = useCart();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/carts?email=${user?.email}`)
+    fetch(`http://localhost:5000/carts?email=${user?.email}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${localStorage.getItem('access-token')}`,
+      },
+    })
       .then((res) => res.json())
       .then((data) => {
         setCarts(data);
@@ -54,7 +61,7 @@ const SelectedClass = () => {
       ></SectionHeader>
    
 
-      {carts.map((item) => (
+      {cart.map((item) => (
         <div key={item._id}>
           <div className="border-2 max-w-screen-lg mx-auto bg-gradient-to-r from-[#caab453b] to-[#2974d01b] rounded-md my-2 rounded-lg">
             <div className="grid grid-cols-1 md:grid-cols-3">
@@ -65,6 +72,9 @@ const SelectedClass = () => {
                 <div className=" flex my-5 place-items-center justify-between">
                   <div>
                     <h2 className="font-semibold capitalize my-1 text-green-500 text-3xl">
+                      {item.instructor}
+                    </h2>
+                    <h2 className="font-semibold capitalize my-1 text-black ">
                       {item.name}
                     </h2>
                   </div>
@@ -94,9 +104,7 @@ const SelectedClass = () => {
                     suada faci lisis Lorem ipsum dolarorit more ametion
                     consectetur elit. Vesti bulum a nec odio aea theawr dumm
                     ipsumm ipsum that dolocons rsus suada and fadolorit
-                    consectetur elit. All the Lorem Ipsum generators on their
-                    the Internet tend repeat predefined chunks dumme lisis
-                    Lorem.
+                    consectetur elit. 
                   </p>
                 </div>
               </div>

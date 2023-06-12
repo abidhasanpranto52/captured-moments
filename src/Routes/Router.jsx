@@ -14,6 +14,8 @@ import AddCourse from "../Pages/DashBoard/AddCourse/AddCourse";
 import CourseCard from "../Pages/DashBoard/CourseCard/CourseCard";
 import InstructorInfo from "../Pages/Instructors/InstructorInfo";
 import Users from "../Pages/DashBoard/Users/Users";
+import ManageClass from "../Pages/DashBoard/ManageClass/ManageClass";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -39,10 +41,6 @@ export const router = createBrowserRouter([
                 element: <Courses/>
             },
             {
-                path: '/extraClasses',
-                element: <ExtraClass/>
-            },
-            {
                 path: '/login',
                 element: <LogIn/>
             },
@@ -54,7 +52,9 @@ export const router = createBrowserRouter([
     },
     {
         path: 'dashboard',
-        element: <Dashboard/>,
+        element: 
+            <PrivateRoute><Dashboard/></PrivateRoute>
+        ,
         children: [
             {
                 path: 'selectedClass',
@@ -74,7 +74,11 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'users',
-                element: <Users/>
+                element:<Users/>
+            },
+            {
+                path: 'manageClasses',
+                element: <ManageClass/>
             },
         ]
     }

@@ -20,11 +20,11 @@ const InstructorInfo = () => {
 
   return (
     <>
-      <TopCover img={topImg} title={instructorInfo.instructor} subtitle={'You can enrolled My Course'} />
+      <TopCover img={topImg} title={instructorInfo.name} subtitle={'You can enrolled My Course'} />
       <div className="border-2 max-w-screen-lg mx-auto my-10">
         <div className="grid grid-cols-1 md:grid-cols-3">
           <div className="border m-2  shadow-lg rounded-md">
-            <img className="flex " src={instructorInfo.instructorImg} alt="" />
+            <img className="flex " src={instructorInfo.image} alt="" />
           </div>
           <div className="px-4 col-span-2">
             <div className=" flex my-5 place-items-center justify-between">
