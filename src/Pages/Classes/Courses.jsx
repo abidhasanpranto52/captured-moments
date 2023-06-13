@@ -5,6 +5,7 @@ import TopCover from "../../Shared/TopCover/TopCover";
 import { AuthContext } from "../../Providers/Authprovider";
 import Swal from "sweetalert2";
 import useCart from "../../assets/Hooks/useCart";
+import { FaUser, FaUsers } from "react-icons/fa";
 
 const Courses = () => {
   const [coursesClass, setCourseClass] = useState([]);
@@ -67,7 +68,7 @@ const Courses = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 place-items-center">
         {coursesClass.map((course) => (
           <div key={course._id}>
-            <section className="card w-80  my-5 border-b-4 rounded-tr-none rounded-bl-none border-t-4 border-green-700 shadow-md shadow-green-100">
+            <section className="card w-80  my-5 border-b-4 rounded-tr-none rounded-bl-none border-t-4 border-red-700 shadow-md hover:border-gray-950 hover:bg-green-100 shadow-green-100">
               <figure>
                 <img className="w-full  h-[215px]" src={course.image} alt="" />
               </figure>
@@ -78,23 +79,23 @@ const Courses = () => {
                 {course.name}
               </p>
 
-              <div className="card-body bg-slate-100">
+              <div className="card-body rounded-br-3xl ">
                 <div className="flex  items-center justify-around">
                   <div className="avatar">
-                    <div className="w-14 rounded-full ring  ring-red-600">
+                    <div className="w-14 rounded-full ring  ring-green-600">
                       <img src={course.instructorImg}/>
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-medium text-black">{course.displayName}</h3>
+                    <h3 className="text-xl font-medium text-black">{course.displayName}</h3>
                   </div>
                 </div>
-                <div className="flex flex-col items-center justify-around">
-                  <p className="card-title mb-2 text-green-600">
-                    <AiOutlineFieldTime className="text-3xl" /> : {course.time}
+                <div className="flex mt-2  items-center">
+                  <p className="card-title mb-2 text-black">
+                    <FaUsers className="text-3xl" /> : {course.time}
                   </p>
                   <h2 className="card-title font-semibold">
-                    Available Seats :{course.seats}
+                     Seats :{course.seats}
                   </h2>
                 </div>
                 <hr />

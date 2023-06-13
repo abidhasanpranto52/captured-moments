@@ -5,6 +5,7 @@ import { AiTwotoneDelete } from "react-icons/ai";
 import { AuthContext } from "../../../Providers/Authprovider";
 import Swal from "sweetalert2";
 import useCart from "../../../assets/Hooks/useCart";
+import { Link } from "react-router-dom";
 
 const SelectedClass = () => {
   const { user } = useContext(AuthContext);
@@ -79,7 +80,7 @@ const SelectedClass = () => {
                     <h2 className="font-semibold capitalize my-1 text-black ">
                       Course Name : {item.name}
                     </h2>
-                    <h2 className="capitalize my-1 text-red-600  font-semibold">
+                    <h2 className="capitalize my-1 text-green-600  font-semibold">
                       Course Price :{" "}
                       <span className="border-2 border-green-700 px-2 rounded-lg">
                         {" "}
@@ -97,12 +98,14 @@ const SelectedClass = () => {
                       </button>
                     </div>
                     <div>
+                    <Link to={'/dashboard/payment'}>
                       <button
                         onClick={() => handlePay(item)}
                         className="btn btn-ghost btn-sm  capitalize text-white hover:text-black items-center bg-green-600"
                       >
                         Pay
                       </button>
+                      </Link>
                     </div>
                   </div>
                 </div>

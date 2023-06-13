@@ -100,28 +100,28 @@ const Users = () => {
             <th>#</th>
               <th>Name</th>
               <th>Email</th>
-              <th>Role</th>
-              <th className="text-justify">Action</th>
+              <th className="text-center">Role</th>
+              <th className="text-left">Action</th>
             </tr>
           </thead>
           <tbody>
             {users.map((user, index) => (
               <tr key={user._id}>
                 <td>{index + 1}</td>
-                <td>{user.name}</td>
+                <td className="font-semibold">{user.name}</td>
                 <td>{user.email}</td>
-                <td>
-                    {user?.role ? <p>{user.role}</p> : <p>Student</p> }
+                <td className="text-center">
+                    {user?.role ? <p className="font-semibold capitalize bg-red-600 text-white btn btn-sm">{user.role}</p> : <p className="btn btn-xs">Student</p> }
                 </td>
-                <td className="flex gap-2">
+                <td className="flex gap-2 text-center">
                 <div>
                   {" "}
-                  {user.role === "admin" ? (
-                    "Admin"
+                  {user.role  === "admin" ? (
+                    <p className="font font-semibold bg-red-700 text-white  p-1 rounded-lg">Admin</p> 
                   ) : (
-                    <button disabled={user.role === "Admin" || user.role === "Instructor"}
+                    <button disabled={user.role === "admin" || user.role === "instructor"}
                       onClick={() => handleMakeAdmin(user)}
-                      className="btn btn-ghost text-2xl text-black  bg-green-500"
+                      className="btn btn-sm btn-ghost text-2xl text-black  bg-green-500"
                     >
                       <FaUsers />
                     </button>
@@ -130,11 +130,11 @@ const Users = () => {
                 <div>
                   {" "}
                   {user.role === "instructor" ? (
-                    "Instructor"
+                    <p className="font font-semibold bg-blue-800 text-white  p-1 rounded-lg">Instructor</p>
                   ) : (
                     <button disabled={user.role === "admin" || user.role === "instructor"}
                       onClick={() => handleMakeInstructor(user)}
-                      className="btn btn-ghost text-2xl text-black  bg-green-500"
+                      className="btn btn-ghost btn-sm text-2xl text-black  bg-green-500"
                     >
                       <FaUsers />
                     </button>
@@ -143,7 +143,7 @@ const Users = () => {
                 <div>
                   <button
                     onClick={() => handleUseDelete(user)}
-                    className="btn btn-ghost text-2xl text-white  bg-red-600"
+                    className="btn btn-ghost text-2xl text-red-700 btn-sm border-black btn-outline "
                   >
                     <AiTwotoneDelete />
                   </button>

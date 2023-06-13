@@ -62,7 +62,7 @@ const Registration = () => {
       </Helmet>
       <div className="hero min-h-screen bg-base-100">
         <div className="hero-content flex-col lg:flex-row items-center">
-          <div className="card flex-shrink-0 w-1/2 border-t-4  border-green-800 border-b-4 border-b-red-400 bg-gradient-to-t from-[#13cd9ba9] to-[#2f2cbe94]  shadow-2xl">
+          <div className="card flex-shrink-0 w-1/2 border-t-4  border-green-800 border-b-4 border-b-red-400 bg-gradient-to-t from-[#c9ded955] to-[#2cbeb494]  shadow-2xl">
             <form
               onSubmit={handleSubmit(onSubmit)}
               className="card-body rounded-2xl"

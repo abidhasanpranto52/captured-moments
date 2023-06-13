@@ -7,7 +7,6 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Courses from "../Pages/Classes/Courses";
 import Instructors from "../Pages/Instructors/Instructors";
 import Dashboard from "../LayOut/Dashboard";
-import ExtraClass from "../Pages/Extra/ExtraClass";
 import SelectedClass from "../Pages/DashBoard/SelectedClass/SelectedClass";
 import EnrolledClass from "../Pages/DashBoard/EnrolledClass/EnrolledClass";
 import AddCourse from "../Pages/DashBoard/AddCourse/AddCourse";
@@ -17,6 +16,8 @@ import Users from "../Pages/DashBoard/Users/Users";
 import ManageClass from "../Pages/DashBoard/ManageClass/ManageClass";
 import PrivateRoute from "./PrivateRoute";
 import UpdateCourse from "../Pages/DashBoard/UpdateCourse/UpdateCourse";
+import Payment from "../Pages/DashBoard/Payment/Payment";
+import AdminRoute from "./AdminRoute";
 
 export const router = createBrowserRouter([
     {
@@ -62,6 +63,10 @@ export const router = createBrowserRouter([
                 element: <SelectedClass/>
             },
             {
+                path: 'payment',
+                element: <Payment/>
+            },
+            {
                 path: 'enrolledClass',
                 element: <EnrolledClass/>
             },
@@ -80,7 +85,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'users',
-                element:<Users/>
+                element: <AdminRoute><Users/></AdminRoute>
             },
             {
                 path: 'manageClasses',

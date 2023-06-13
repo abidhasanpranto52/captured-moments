@@ -19,7 +19,7 @@ const Instructors = () => {
   return (
     <>
       <TopCover img={topImg} title={"Our Instructors"} subtitle={'You can enrolled '}/>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  place-items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  place-items-center">
         {instructors.map((instructor) => (
           <div key={instructor._id}>
             <section className="card w-80   my-5 border-b-4 rounded-tr-none rounded-bl- border-green-700 shadow-md shadow-green-200">
