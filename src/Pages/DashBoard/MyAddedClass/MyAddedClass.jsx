@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ManageClass = () => {
+const MyAddedClass = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const ManageClass = () => {
     );
 };
 
-export default ManageClass;
+export default MyAddedClass;

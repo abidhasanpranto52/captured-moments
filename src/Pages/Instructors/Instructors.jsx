@@ -3,12 +3,9 @@ import TopCover from "../../Shared/TopCover/TopCover";
 import topImg from "../../assets/Banner/Instructors.jpg";
 import { AiOutlineShareAlt } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import useInstructor from "../../assets/Hooks/useInstructor";
-import useCourse from "../../assets/Hooks/useCourse";
 
 const Instructors = () => {
   const [instructors, setInstructors] = useState([]);
-  const [course] = useCourse();
 
   useEffect(() => {
     fetch("http://localhost:5000/instructors")
@@ -19,7 +16,6 @@ const Instructors = () => {
       });
   }, []);
 
-  // const [instructor] = useInstructor();
   return (
     <>
       <TopCover img={topImg} title={"Our Instructors"} subtitle={'You can enrolled '}/>
@@ -31,7 +27,7 @@ const Instructors = () => {
                 <img
                   className="w-full"
                   src={instructor.image}
-                  alt={instructor}
+                  alt={""}
                 />
               </figure>
 
@@ -40,7 +36,7 @@ const Instructors = () => {
                 <div className="flex  items-center justify-between">
                   <div>
                     <p className="text-2xl font-medium">{instructor.name}</p>
-                    <small className="bg-success p-1 capitalize rounded font-medium">{instructor.name}</small>
+                    <small className="bg-black text-white p-1 rounded font-medium">{instructor.email}</small>
                   </div>
                   <div>
                     <Link to={`/instructorsInfo/${instructor._id}`}>

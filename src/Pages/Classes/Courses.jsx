@@ -25,7 +25,7 @@ const Courses = () => {
     if (user && user.email) {
       const courseItem = {
         courseItemId: course._id,
-        instructor: course.instructor,
+        instructor: course.displayName,
         name: course.name,
         image: course.image,
         price: course.price,
@@ -69,7 +69,7 @@ const Courses = () => {
           <div key={course._id}>
             <section className="card w-80  my-5 border-b-4 rounded-tr-none rounded-bl-none border-t-4 border-green-700 shadow-md shadow-green-100">
               <figure>
-                <img className="w-full" src={course.image} alt="" />
+                <img className="w-full  h-[215px]" src={course.image} alt="" />
               </figure>
               <p
                 className="font-bold absolute right-0 mr-2 bg-yellow-500 p-1
@@ -78,15 +78,15 @@ const Courses = () => {
                 {course.name}
               </p>
 
-              <div className="card-body">
-                <div className="flex  items-center justify-evenly">
+              <div className="card-body bg-slate-100">
+                <div className="flex  items-center justify-around">
                   <div className="avatar">
                     <div className="w-14 rounded-full ring  ring-red-600">
                       <img src={course.instructorImg}/>
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-yellow-600">{course.displayName}</h3>
+                    <h3 className="text-2xl font-medium text-black">{course.displayName}</h3>
                   </div>
                 </div>
                 <div className="flex flex-col items-center justify-around">

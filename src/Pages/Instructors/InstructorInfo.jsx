@@ -3,37 +3,27 @@ import { useLoaderData } from "react-router-dom";
 import { FaFacebookF, FaInstagram, FaYoutube, FaTwitter } from "react-icons/fa";
 import topImg from "../../assets/Banner/Instructors.jpg";
 import TopCover from "../../Shared/TopCover/TopCover";
+import useInstructor from "../../assets/Hooks/useInstructor";
 
-const InstructorInfo = () => {
-  // const [instructorInfo, setinstructorInfo] = useState([ ]);
+const instructor = () => {
 
-  // useEffect(() => {
-  //   fetch("http://localhost:5000/course")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setinstructorInfo(data);
-  //       console.log(data);
-  //     });
-  // }, []);
-  const instructorInfo = useLoaderData();
-  console.log(instructorInfo);
 
   return (
     <>
-      <TopCover img={topImg} title={instructorInfo.name} subtitle={'You can enrolled My Course'} />
-      <div className="border-2 max-w-screen-lg mx-auto my-10">
+      <TopCover img={topImg}  subtitle={'You can enrolled My Course'} />
+      {/* <div className="border-2 max-w-screen-lg mx-auto my-10">
         <div className="grid grid-cols-1 md:grid-cols-3">
           <div className="border m-2  shadow-lg rounded-md">
-            <img className="flex " src={instructorInfo.image} alt="" />
+            <img className="flex " src={instructors.image} alt="" />
           </div>
           <div className="px-4 col-span-2">
             <div className=" flex my-5 place-items-center justify-between">
               <div>
                 <h2 className="font-bold my-2 text-3xl">
-                  {instructorInfo.instructor}
+                  {instructors.instructor}
                 </h2>
                 <small className="capitalize bg-yellow-300 rounded-sm px-2 m-1 font-semibold">
-                  {instructorInfo.name}
+                  {instructors.name}
                 </small>
               </div>
               <div className="flex gap-2">
@@ -56,9 +46,9 @@ const InstructorInfo = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
 
-export default InstructorInfo;
+export default instructor;

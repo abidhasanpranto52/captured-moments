@@ -57,7 +57,7 @@ const AddCourse = () => {
                 Swal.fire({
                   position: "top-middle",
                   icon: "success",
-                  title: "Your work has been saved",
+                  title: "Your Course has been Added",
                   showConfirmButton: false,
                   timer: 1500,
                 });

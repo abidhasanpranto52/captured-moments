@@ -22,6 +22,7 @@ import useCart from "../assets/Hooks/useCart";
 import { AuthContext } from "../Providers/Authprovider";
 import useAdmin from "../assets/Hooks/useAdmin";
 import useInstructor from "../assets/Hooks/useInstructor";
+import useCourse from "../assets/Hooks/useCourse";
 
 const Dashboard = () => {
   const [cart] = useCart();

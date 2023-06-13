@@ -16,6 +16,7 @@ import InstructorInfo from "../Pages/Instructors/InstructorInfo";
 import Users from "../Pages/DashBoard/Users/Users";
 import ManageClass from "../Pages/DashBoard/ManageClass/ManageClass";
 import PrivateRoute from "./PrivateRoute";
+import UpdateCourse from "../Pages/DashBoard/UpdateCourse/UpdateCourse";
 
 export const router = createBrowserRouter([
     {
@@ -67,6 +68,11 @@ export const router = createBrowserRouter([
             {
                 path: 'addCourse',
                 element: <AddCourse/>
+            },
+            {
+                path: 'updateCourse/:id',
+                element: <UpdateCourse/>,
+                loader: async ({params})=> await fetch(`http://localhost:5000/myCourse/${params.id}`)
             },
             {
                 path: 'courseCard',

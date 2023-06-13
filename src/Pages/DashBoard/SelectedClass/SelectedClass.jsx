@@ -8,21 +8,18 @@ import useCart from "../../../assets/Hooks/useCart";
 
 const SelectedClass = () => {
   const { user } = useContext(AuthContext);
-  // const [carts, setCarts] = useState([]);
-  const [cart] = useCart();
-  const [,refetch] = useCart();
+  const [cart, refetch] = useCart();
 
   useEffect(() => {
     fetch(`http://localhost:5000/carts?email=${user?.email}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${localStorage.getItem('access-token')}`,
+        Authorization: `Bearer ${localStorage.getItem("access-token")}`,
       },
     })
       .then((res) => res.json())
       .then((data) => {
-        setCarts(data);
         console.log(data);
       });
   }, [user]);
@@ -38,15 +35,16 @@ const SelectedClass = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/carts/${item._id}`,{
-          method: "DELETE"
-        }).then((res) => res.json())
-        .then(data => {
-          if (data.deletedCount> 0) {
-            refetch()
-            Swal.fire("Deleted!", "Your file has been deleted.", "success");
-          }
+        fetch(`http://localhost:5000/carts/${item._id}`, {
+          method: "DELETE",
         })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              refetch();
+              Swal.fire("Deleted!", "Your file has been deleted.", "success");
+            }
+          });
       }
     });
   };
@@ -56,33 +54,44 @@ const SelectedClass = () => {
       <Helmet>
         <title>Captured Moments| Selected Courses</title>
       </Helmet>
-      <SectionHeader
-        heading={"My Selected Classes "}
-      ></SectionHeader>
-   
+      <SectionHeader heading={"My Selected Classes "}></SectionHeader>
 
       {cart.map((item) => (
         <div key={item._id}>
-          <div className="border-2 max-w-screen-lg mx-auto bg-gradient-to-r from-[#caab453b] to-[#2974d01b] rounded-md my-2 rounded-lg">
-            <div className="grid grid-cols-1 md:grid-cols-3">
-              <div className="border m-2  shadow-lg rounded-md">
-                <img className="rounded-md" src={item.image} alt="" />
+          <div className=" max-w-screen-md  mx-auto bg-gradient-to-r from-[#caab453b] to-[#2974d01b] rounded-md my-2">
+            <div className="grid grid-cols-1 items-center md:grid-cols-4">
+              <div className="">
+                <div className="avatar border m-2 rounded-md">
+                  <div className="w-32 rounded">
+                    <img src={item.image}/>
+                  </div>
+                </div>
               </div>
-              <div className="px-4 col-span-2">
-                <div className=" flex my-5 place-items-center justify-between">
+              <div className="px-4 col-span-3">
+                <div className=" flex my-2 place-items-center justify-between">
                   <div>
-                    <h2 className="font-semibold capitalize my-1 text-green-500 text-3xl">
-                      {item.instructor}
+                    <h2 className="font-bold capitalize my-1 items-center text-black ">
+                      Instructor Name:{" "}
+                      <span className="text-red-500 text-3xl">
+                        {item.instructor}
+                      </span>
                     </h2>
                     <h2 className="font-semibold capitalize my-1 text-black ">
-                      {item.name}
+                      Course Name : {item.name}
+                    </h2>
+                    <h2 className="capitalize my-1 text-red-600  font-semibold">
+                      Course Price :{" "}
+                      <span className="border-2 border-green-700 px-2 rounded-lg">
+                        {" "}
+                        ${item.price}
+                      </span>
                     </h2>
                   </div>
-                  <div className="flex gap-4 place-items-center items-center">
-                    <div>
+                  <div className="flex-col gap-4 place-items-center items-center">
+                    <div className="mb-2">
                       <button
                         onClick={() => handleDelete(item)}
-                        className="btn btn-ghost btn-sm border-black text-2xl btn-circle  text-red-600 hover:border-red-800 hover:text-black hover:bg-transparent"
+                        className="btn btn-ghost btn-sm border-black text-2xl btn-outline  text-red-600 hover:border-red-800 hover:text-black hover:bg-transparent"
                       >
                         <AiTwotoneDelete />
                       </button>
@@ -96,16 +105,6 @@ const SelectedClass = () => {
                       </button>
                     </div>
                   </div>
-                </div>
-                <hr />
-                <div>
-                  <h4 className="font-semibold text-2xl my-1">About Course:</h4>
-                  <p>
-                    suada faci lisis Lorem ipsum dolarorit more ametion
-                    consectetur elit. Vesti bulum a nec odio aea theawr dumm
-                    ipsumm ipsum that dolocons rsus suada and fadolorit
-                    consectetur elit. 
-                  </p>
                 </div>
               </div>
             </div>
