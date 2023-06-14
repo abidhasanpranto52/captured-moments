@@ -13,7 +13,7 @@ const Courses = () => {
   const [, refetch] = useCart();
 
   useEffect(() => {
-    fetch("http://localhost:5000/course")
+    fetch("https://captured-moment-server-abidhasanpranto52.vercel.app/course")
       .then((res) => res.json())
       .then((data) => {
         setCourseClass(data);
@@ -33,7 +33,7 @@ const Courses = () => {
         email: user.email,
       };
       console.log(courseItem);
-      fetch("http://localhost:5000/carts", {
+      fetch("https://captured-moment-server-abidhasanpranto52.vercel.app/carts", {
         method: "POST",
         headers: {
           "content-type": "application/json",

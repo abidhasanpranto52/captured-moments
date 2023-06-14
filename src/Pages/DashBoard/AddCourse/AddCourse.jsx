@@ -40,7 +40,7 @@ const AddCourse = () => {
             image: imgURL,
           };
           console.log(newItem);
-          fetch("http://localhost:5000/course", {
+          fetch("https://captured-moment-server-abidhasanpranto52.vercel.app/course", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

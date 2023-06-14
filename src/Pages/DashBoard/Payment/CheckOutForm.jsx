@@ -2,8 +2,10 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useEffect, useState, useContext } from "react";
 import useAxiosSecure from "../../../assets/Hooks/useAxiosSecure";
 import { AuthContext } from "../../../Providers/Authprovider";
+import useCart from "../../../assets/Hooks/useCart";
 
 const CheckOutForm = ({ price, payCourse }) => {
+  const [cart] = useCart();
   const stripe = useStripe();
   const elements = useElements();
   const { user } = useContext(AuthContext);

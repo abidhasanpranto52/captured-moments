@@ -12,7 +12,7 @@ const CourseCard = () => {
   const [, refetch] = useCart();
   const [course, setCourse] = useState([]);
 
-  const url = `http://localhost:5000/myCourse/${user?.email}`;
+  const url = `https://captured-moment-server-abidhasanpranto52.vercel.app/myCourse/${user?.email}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
@@ -39,7 +39,7 @@ const CourseCard = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/myCourse/${myClass._id}`, {
+        fetch(`https://captured-moment-server-abidhasanpranto52.vercel.app/myCourse/${myClass._id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

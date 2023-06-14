@@ -11,7 +11,7 @@ const ManageClass = () => {
   const [, refetch] = useCart();
 
   useEffect(() => {
-    fetch("http://localhost:5000/course")
+    fetch("https://captured-moment-server-abidhasanpranto52.vercel.app/course")
       .then((res) => res.json())
       .then((data) => {
         setCourseClass(data);

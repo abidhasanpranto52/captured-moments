@@ -36,7 +36,7 @@ export const router = createBrowserRouter([
             {
                 path: '/instructorsInfo/:id',
                 element: <InstructorInfo/>,
-                loader: async ({params})=> await fetch(`http://localhost:5000/instructorInfo/${params.id}`)
+                loader: async ({params})=> await fetch(`https://captured-moment-server-abidhasanpranto52.vercel.app/instructorInfo/${params.id}`)
             },
             {
                 path: '/classes',
@@ -65,7 +65,7 @@ export const router = createBrowserRouter([
             {
                 path: 'payment/:id',
                 element: <Payment/>,
-                loader: async ({params}) => await fetch(`http://localhost:5000/carts/${params._id}`)
+                loader: async ({params}) => await fetch(`https://captured-moment-server-abidhasanpranto52.vercel.app/carts/${params._id}`)
             },
             {
                 path: 'enrolledClass',
@@ -78,7 +78,7 @@ export const router = createBrowserRouter([
             {
                 path: 'updateCourse/:id', //instructor
                 element: <UpdateCourse/>,
-                loader: async ({params})=> await fetch(`http://localhost:5000/myCourse/${params.id}`)
+                loader: async ({params})=> await fetch(`https://captured-moment-server-abidhasanpranto52.vercel.app/myCourse/${params.id}`)
             },
             {
                 path: 'courseCard',

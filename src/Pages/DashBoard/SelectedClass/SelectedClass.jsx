@@ -12,7 +12,7 @@ const SelectedClass = () => {
   const [cart, refetch] = useCart();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/carts?email=${user?.email}`, {
+    fetch(`https://captured-moment-server-abidhasanpranto52.vercel.app/carts?email=${user?.email}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -36,7 +36,7 @@ const SelectedClass = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/carts/${item._id}`, {
+        fetch(`https://captured-moment-server-abidhasanpranto52.vercel.app/carts/${item._id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

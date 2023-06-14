@@ -28,7 +28,7 @@ const Registration = () => {
             email: data.email,
             image: data.photoURL,
           };
-          fetch("http://localhost:5000/users", {
+          fetch("https://captured-moment-server-abidhasanpranto52.vercel.app/users", {
             method: "POST",
             headers: {
               "content-type": "application/json",
