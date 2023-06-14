@@ -44,7 +44,7 @@ const Courses = () => {
         .then((data) => {
           if (data.insertedId) {
             refetch();
-            Swal.fire("Good job!", "Food added on The Cart!", "success");
+            Swal.fire("Good job!", "Course added on The Cart!", "success");
           }
         });
     } else {

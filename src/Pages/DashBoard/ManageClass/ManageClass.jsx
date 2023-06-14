@@ -67,7 +67,7 @@ const ManageClass = () => {
                   <p className="font-medium">{course.displayName}</p>
                   <small>{course.email}</small>
                 </td>
-                <td></td>
+                <td><p className="text-justify">{course.seats}</p></td>
                 <td>$ {course.price}</td>
                 <td className="flex gap-2 justify-center items-center">
                   <button className="btn btn-sm text-white  bg-lime-600 hover:text-black">
@@ -76,28 +76,12 @@ const ManageClass = () => {
                   <button className="btn btn-sm text-white  bg-error hover:text-black">
                     Denied
                   </button>
-
-                  {/* Open the modal using ID.showModal() method */}
                   <button
-                    className="btn btn-sm capitalize "
-                    onClick={() => window.my_modal_5.showModal()}
+                    className="btn btn-sm text-white  bg-blue-600 hover:text-black "
                   >
                     FeedBack
                   </button>
-                  <dialog
-                    id="my_modal_5"
-                    className="modal modal-bottom sm:modal-middle"
-                  >
-                    <form method="dialog" className="modal-box">
-                      <h3 className="font-bold text-lg">Hello!</h3>
-                      <p className="py-4">
-                        Press ESC key or click the button below to close
-                      </p>
-                      <div className="modal-action">
-                        <button className="btn">Okay</button>
-                      </div>
-                    </form>
-                  </dialog>
+                  
                 </td>
                 
               </tr>
