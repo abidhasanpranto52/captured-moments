@@ -107,7 +107,7 @@ const CourseCard = () => {
                 </td>
                 <td className="text-center">
                   <div className="tooltip tooltip-info" data-tip="Update">
-                    <Link to={`/myCourse/${myClass._id}`}>
+                    <Link to={`/dashboard/updateCourse/${myClass._id}`}>
                       <button
                         onClick={() => handleCourseUpdate(myClass)}
                         className="btn btn-ghost btn-sm  text-white hover:text-black items-center bg-green-600"

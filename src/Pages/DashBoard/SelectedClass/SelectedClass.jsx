@@ -98,9 +98,8 @@ const SelectedClass = () => {
                       </button>
                     </div>
                     <div>
-                    <Link to={'/dashboard/payment'}>
+                    <Link to={`/dashboard/payment/${item._id}`}>
                       <button
-                        onClick={() => handlePay(item)}
                         className="btn btn-ghost btn-sm  capitalize text-white hover:text-black items-center bg-green-600"
                       >
                         Pay
@@ -115,7 +114,6 @@ const SelectedClass = () => {
         </div>
       ))}
     </div>
-    // <h1>hello</h1>
   );
 };
 

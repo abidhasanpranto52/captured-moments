@@ -63,19 +63,20 @@ export const router = createBrowserRouter([
                 element: <SelectedClass/>
             },
             {
-                path: 'payment',
-                element: <Payment/>
+                path: 'payment/:id',
+                element: <Payment/>,
+                loader: async ({params}) => await fetch(`http://localhost:5000/carts/${params._id}`)
             },
             {
                 path: 'enrolledClass',
                 element: <EnrolledClass/>
             },
             {
-                path: 'addCourse',
+                path: 'addCourse', //instructor
                 element: <AddCourse/>
             },
             {
-                path: 'updateCourse/:id',
+                path: 'updateCourse/:id', //instructor
                 element: <UpdateCourse/>,
                 loader: async ({params})=> await fetch(`http://localhost:5000/myCourse/${params.id}`)
             },

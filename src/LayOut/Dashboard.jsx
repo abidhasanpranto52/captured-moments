@@ -124,11 +124,6 @@ const Dashboard = () => {
                     Classes
                   </Link>
                 </li>
-                <li>
-                  <Link to={"/dashboard/enrolledClass"}>
-                    <AiTwotoneShopping className="text-2xl" />Payment
-                  </Link>
-                </li>
               </>
             }
             <div className="divider"></div>

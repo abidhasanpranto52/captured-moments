@@ -111,7 +111,7 @@ const Users = () => {
                 <td className="font-semibold">{user.name}</td>
                 <td>{user.email}</td>
                 <td className="text-center">
-                    {user?.role ? <p className="font-semibold capitalize bg-red-600 text-white btn btn-sm">{user.role}</p> : <p className="btn btn-xs">Student</p> }
+                    {user?.role ? <p className="font-semibold capitalize bg-red-400 text-black btn btn-sm">{user.role}</p> : <p className="btn btn-xs">Student</p> }
                 </td>
                 <td className="flex gap-2 text-center">
                 <div>

@@ -1,4 +1,3 @@
-
 const SectionHeader = ({heading}) => {
     return (
       <div className="mx-auto text-center md:w-4/12">
